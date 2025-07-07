@@ -9,7 +9,8 @@ import Link from "next/link";
 import { Plant1 } from "@/components/ui/Plant1";
 import { Plant2 } from "@/components/ui/Plant2";
 import { Plant3 } from "@/components/ui/Plant3";
-import { InteractivePlant } from '@/components/ui/InteractivePlant';
+import Image from 'next/image';
+import { Draggable } from '@/components/ui/Draggable';
 
 const services = [
   {
@@ -86,9 +87,11 @@ export default function ServicosPage() {
               <div key={index} data-anime className="h-full">
                 <Card className="interactive-card flex flex-col text-center items-center p-6 bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 h-full rounded-2xl">
                   <CardHeader className="p-0 items-center">
-                    <div className="interactive-button p-4 bg-background rounded-full mb-4">
-                      <service.icon className="w-8 h-8 text-primary" />
-                    </div>
+                    <Draggable>
+                      <div className="p-4 bg-background rounded-full mb-4 inline-block">
+                        <service.icon className="w-8 h-8 text-primary" />
+                      </div>
+                    </Draggable>
                     <CardTitle className="text-2xl">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="mt-4 flex-grow">
@@ -108,9 +111,16 @@ export default function ServicosPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div data-anime className="relative h-80 md:h-[450px] flex items-center justify-center">
-              <div className="relative w-full h-full max-w-[400px] max-h-[400px] bg-card/80 backdrop-blur-sm border rounded-2xl shadow-lg flex items-center justify-center p-8">
-                  <InteractivePlant className="w-full h-full text-primary" />
-              </div>
+              <Card className="overflow-hidden shadow-xl rounded-2xl w-full max-w-[400px]">
+                <Image
+                    src="https://placehold.co/600x400.png"
+                    alt="Espaço terapêutico calmo e acolhedor"
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-full"
+                    data-ai-hint="calm therapy room"
+                />
+              </Card>
             </div>
             <div data-anime>
               <h2 className="text-3xl font-bold mb-4">Minha Abordagem Terapêutica</h2>

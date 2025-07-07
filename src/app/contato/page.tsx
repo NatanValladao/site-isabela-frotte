@@ -10,6 +10,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Plant1 } from "@/components/ui/Plant1";
 import { Plant2 } from "@/components/ui/Plant2";
 import { Plant3 } from "@/components/ui/Plant3";
+import { Draggable } from '@/components/ui/Draggable';
 
 
 export default function ContatoPage() {
@@ -81,13 +82,15 @@ export default function ContatoPage() {
                 ].map((info, index) => (
                   <div 
                     key={index} 
-                    className="flex items-start gap-4 group"
+                    className="flex items-center gap-4"
                   >
-                    <div 
-                      className="p-3 bg-accent/20 rounded-full transition-all duration-300 group-hover:scale-125 group-hover:rotate-12"
-                    >
-                      <info.icon className="w-6 h-6 text-primary" />
-                    </div>
+                    <Draggable>
+                      <div 
+                        className="p-3 bg-accent/20 rounded-full"
+                      >
+                        <info.icon className="w-6 h-6 text-primary" />
+                      </div>
+                    </Draggable>
                     <div>
                       <h3 className="text-xl font-semibold">{info.title}</h3>
                       <p className="text-muted-foreground">{info.desc}</p>

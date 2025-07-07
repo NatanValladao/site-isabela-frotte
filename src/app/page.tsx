@@ -10,6 +10,7 @@ import Link from "next/link";
 import { Plant1 } from "@/components/ui/Plant1";
 import { Plant2 } from "@/components/ui/Plant2";
 import { Plant3 } from "@/components/ui/Plant3";
+import { Draggable } from '@/components/ui/Draggable';
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -120,9 +121,11 @@ export default function Home() {
                 <div key={service.title} data-anime>
                    <Card className="interactive-card bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 flex flex-col items-center text-center p-6 rounded-2xl h-full">
                      <CardHeader className="p-0 items-center">
-                       <div className="p-4 bg-background rounded-full mb-4 inline-block interactive-button">
-                         <service.icon className="w-8 h-8 text-primary" />
-                       </div>
+                       <Draggable>
+                         <div className="p-4 bg-background rounded-full mb-4 inline-block">
+                           <service.icon className="w-8 h-8 text-primary" />
+                         </div>
+                       </Draggable>
                        <CardTitle>{service.title}</CardTitle>
                      </CardHeader>
                      <CardContent className="flex-grow mt-2">
