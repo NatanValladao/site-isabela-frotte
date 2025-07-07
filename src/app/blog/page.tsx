@@ -3,7 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { InteractivePlant } from "@/components/ui/InteractivePlant";
+import { Plant1 } from "@/components/ui/Plant1";
+import { Plant3 } from "@/components/ui/Plant3";
 
 const blogPosts = [
   {
@@ -69,12 +70,12 @@ export default function BlogPage() {
       </section>
 
       <section className="py-16 md:py-24 relative overflow-hidden">
-        <InteractivePlant className="absolute -top-24 -left-24 w-96 h-96 text-accent opacity-10 -z-10" />
-        <InteractivePlant className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary opacity-20 -z-10 transform scale-x-[-1]" />
+        <Plant1 className="absolute -top-24 -left-24 w-96 h-96 text-accent/50 opacity-10 -z-10" />
+        <Plant3 className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary/70 opacity-20 -z-10 transform scale-x-[-1]" />
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <Card key={post.title} className="flex flex-col overflow-hidden group border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl bg-card/50">
+              <Card key={post.title} className="flex flex-col overflow-hidden group bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 hover:shadow-lg transition-all duration-300 rounded-2xl">
                 <div className="overflow-hidden rounded-t-2xl">
                   <Image
                     src={post.image}

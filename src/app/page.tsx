@@ -3,15 +3,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Brain, Users, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { InteractivePlant } from "@/components/ui/InteractivePlant";
+import { Plant1 } from "@/components/ui/Plant1";
+import { Plant2 } from "@/components/ui/Plant2";
+import { Plant3 } from "@/components/ui/Plant3";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         <section className="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden">
-          <InteractivePlant className="absolute -bottom-24 -left-24 w-80 h-80 text-secondary opacity-20 -z-10" />
-          <InteractivePlant className="absolute -top-24 -right-24 w-96 h-96 text-accent opacity-20 -z-10 transform scale-x-[-1] rotate-12" />
+          <Plant1 className="absolute -bottom-32 -left-32 w-96 h-96 text-secondary/70 opacity-20 -z-10" />
+          <Plant2 className="absolute -top-32 -right-32 w-96 h-96 text-accent/70 opacity-20 -z-10 transform scale-x-[-1] rotate-12" />
           
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
@@ -50,7 +52,7 @@ export default function Home() {
 
         <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
           <div className="container px-4 md:px-6 relative">
-            <InteractivePlant className="absolute -bottom-12 -right-12 w-64 h-64 text-secondary opacity-30 -z-10" />
+            <Plant3 className="absolute -bottom-20 -right-20 w-80 h-80 text-secondary/70 opacity-30 -z-10" />
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground font-medium">Nossos Serviços</div>
@@ -61,7 +63,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto grid max-w-5xl items-stretch gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
-              <Card className="bg-card/50 border-0 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center p-6 rounded-2xl">
+              <Card className="bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center p-6 rounded-2xl">
                 <CardHeader className="p-0 items-center">
                   <div className="p-4 bg-background rounded-full mb-4 inline-block">
                     <User className="w-8 h-8 text-primary" />
@@ -72,7 +74,7 @@ export default function Home() {
                   <p className="text-muted-foreground">Um espaço confidencial para explorar suas emoções, desafios e potenciais.</p>
                 </CardContent>
               </Card>
-              <Card className="bg-card/50 border-0 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center p-6 rounded-2xl">
+              <Card className="bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center p-6 rounded-2xl">
                 <CardHeader className="p-0 items-center">
                    <div className="p-4 bg-background rounded-full mb-4 inline-block">
                     <Users className="w-8 h-8 text-primary" />
@@ -83,7 +85,7 @@ export default function Home() {
                   <p className="text-muted-foreground">Fortaleça a comunicação, a confiança e a conexão em seu relacionamento.</p>
                 </CardContent>
               </Card>
-              <Card className="bg-card/50 border-0 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center p-6 rounded-2xl">
+              <Card className="bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center p-6 rounded-2xl">
                 <CardHeader className="p-0 items-center">
                    <div className="p-4 bg-background rounded-full mb-4 inline-block">
                     <Brain className="w-8 h-8 text-primary" />

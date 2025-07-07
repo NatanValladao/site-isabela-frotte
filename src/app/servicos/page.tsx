@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeartHandshake, Lightbulb, User, Users } from "lucide-react";
 import Link from "next/link";
-import { InteractivePlant } from "@/components/ui/InteractivePlant";
+import { Plant2 } from "@/components/ui/Plant2";
+import { Plant3 } from "@/components/ui/Plant3";
 
 const services = [
   {
@@ -38,7 +39,7 @@ export default function ServicosPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {services.map((service, index) => (
-              <Card key={index} className="flex flex-col text-center items-center p-6 border-0 bg-card/50 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 rounded-2xl">
+              <Card key={index} className="flex flex-col text-center items-center p-6 bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 rounded-2xl">
                 <CardHeader className="p-0 items-center">
                   <div className="p-4 bg-background rounded-full mb-4">
                     <service.icon className="w-8 h-8 text-primary" />
@@ -56,8 +57,8 @@ export default function ServicosPage() {
 
       <section className="py-16 md:py-24 bg-secondary/20 overflow-hidden">
         <div className="container mx-auto px-4 relative">
-          <InteractivePlant className="absolute -bottom-20 -left-20 w-72 h-72 text-accent/30 opacity-50 -z-10 transform -rotate-12" />
-          <InteractivePlant className="absolute -top-20 -right-20 w-80 h-80 text-secondary/40 opacity-50 -z-10 transform scale-x-[-1] rotate-45" />
+          <Plant3 className="absolute -bottom-20 -left-20 w-72 h-72 text-accent/30 opacity-50 -z-10 transform -rotate-12" />
+          <Plant2 className="absolute -top-20 -right-20 w-80 h-80 text-secondary/40 opacity-50 -z-10 transform scale-x-[-1] rotate-45" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="relative h-80 md:h-[450px]">
