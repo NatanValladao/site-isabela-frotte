@@ -3,14 +3,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Brain, Users, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { InteractivePlant } from "@/components/ui/InteractivePlant";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         <section className="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden">
-          <div className="absolute top-0 -left-24 w-72 h-72 bg-accent/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute bottom-0 -right-24 w-72 h-72 bg-secondary/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+          <InteractivePlant className="absolute -bottom-24 -left-24 w-80 h-80 text-secondary opacity-20 -z-10" />
+          <InteractivePlant className="absolute -top-24 -right-24 w-96 h-96 text-accent opacity-20 -z-10 transform scale-x-[-1] rotate-12" />
           
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
