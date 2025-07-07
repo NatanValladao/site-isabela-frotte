@@ -1,0 +1,95 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { Check, ArrowRight } from 'lucide-react';
+import { Plant1 } from '@/components/ui/Plant1';
+import { Plant2 } from '@/components/ui/Plant2';
+
+export const metadata: Metadata = {
+  title: 'Terapia Individual com Psicóloga Isabela | Acolhimento e Autoconhecimento',
+  description: 'Explore suas emoções em um espaço seguro. A terapia individual com a Psicóloga Isabela ajuda a lidar com ansiedade, estresse e a promover seu crescimento pessoal.',
+  keywords: 'terapia individual, psicóloga, autoconhecimento, ansiedade, estresse, desenvolvimento pessoal',
+};
+
+export default function TerapiaIndividualPage() {
+  const benefits = [
+    "Gestão de ansiedade e estresse",
+    "Desenvolvimento de autoestima e confiança",
+    "Superação de traumas e bloqueios emocionais",
+    "Melhora nos relacionamentos interpessoais",
+    "Clareza para tomar decisões importantes",
+    "Promoção do bem-estar e equilíbrio emocional",
+  ];
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-1">
+        <section className="relative w-full py-20 md:py-28 bg-secondary/20 overflow-hidden">
+          <Plant1 className="absolute -bottom-24 -left-24 w-80 h-80 text-accent/50 opacity-20 -z-10" />
+          <div className="container px-4 md:px-6 text-center">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+              Terapia Individual
+            </h1>
+            <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl mt-4">
+              Um espaço confidencial e acolhedor dedicado exclusivamente a você, sua história e sua jornada de autoconhecimento.
+            </p>
+          </div>
+        </section>
+
+        <section className="w-full py-16 md:py-24">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+              <div className="space-y-4">
+                <h2 className="text-3xl font-bold tracking-tighter">Como a Terapia Individual Pode Ajudar?</h2>
+                <p className="text-muted-foreground">
+                  A terapia individual é um processo colaborativo entre você e a psicóloga, focado em suas necessidades e objetivos. É uma oportunidade para explorar seus pensamentos, sentimentos e comportamentos em um ambiente seguro, sem julgamentos. Juntos, podemos trabalhar para identificar padrões, desenvolver novas habilidades e encontrar caminhos para uma vida mais plena e satisfatória.
+                </p>
+                <ul className="space-y-3 mt-6">
+                  {benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-center">
+                      <Check className="h-5 w-5 mr-3 text-accent-foreground bg-accent p-1 rounded-full" />
+                      <span className="font-medium">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative">
+                 <div className="interactive-card">
+                   <Image
+                      src="https://placehold.co/600x400.png"
+                      alt="Mulher em sessão de terapia individual, sentindo-se acolhida e segura."
+                      width={600}
+                      height={400}
+                      className="relative mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full shadow-xl"
+                      data-ai-hint="safe space"
+                    />
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 md:py-24 bg-secondary/20 relative overflow-hidden">
+          <Plant2 className="absolute -top-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
+          <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
+            <div className="space-y-3">
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Inicie Sua Jornada de Transformação</h2>
+              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Dar o primeiro passo é um ato de coragem e autocuidado. Estou aqui para caminhar ao seu lado.
+              </p>
+            </div>
+            <div className="mx-auto w-full max-w-sm space-y-2 interactive-button">
+               <Button asChild size="lg" className="font-semibold w-full">
+                  <Link href="/contato">
+                    Agende sua Conversa Inicial
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}

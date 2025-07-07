@@ -114,24 +114,26 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl items-stretch gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
               {[
-                { icon: User, title: "Terapia Individual", description: "Um espaço confidencial para explorar suas emoções, desafios e potenciais." },
-                { icon: Users, title: "Terapia de Casal", description: "Fortaleça a comunicação, a confiança e a conexão em seu relacionamento." },
-                { icon: Brain, title: "Orientação Profissional", description: "Encontre clareza e direção para sua carreira e desenvolvimento profissional." },
+                { icon: User, title: "Terapia Individual", href: "/servicos/terapia-individual", description: "Um espaço confidencial para explorar suas emoções, desafios e potenciais." },
+                { icon: Users, title: "Terapia de Casal", href: "/servicos/terapia-de-casal", description: "Fortaleça a comunicação, a confiança e a conexão em seu relacionamento." },
+                { icon: Brain, title: "Orientação Profissional", href: "/servicos/orientacao-profissional", description: "Encontre clareza e direção para sua carreira e desenvolvimento profissional." },
               ].map((service) => (
                 <div key={service.title} data-anime>
-                   <Card className="interactive-card bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 flex flex-col items-center text-center p-6 rounded-2xl h-full">
-                     <CardHeader className="p-0 items-center">
-                       <Draggable>
-                         <div className="p-4 bg-background rounded-full mb-4 inline-block">
-                           <service.icon className="w-8 h-8 text-primary" />
-                         </div>
-                       </Draggable>
-                       <CardTitle>{service.title}</CardTitle>
-                     </CardHeader>
-                     <CardContent className="flex-grow mt-2">
-                       <p className="text-muted-foreground">{service.description}</p>
-                     </CardContent>
-                   </Card>
+                   <Link href={service.href} className="block h-full">
+                     <Card className="interactive-card bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 flex flex-col items-center text-center p-6 rounded-2xl h-full">
+                       <CardHeader className="p-0 items-center">
+                         <Draggable>
+                           <div className="p-4 bg-background rounded-full mb-4 inline-block">
+                             <service.icon className="w-8 h-8 text-primary" />
+                           </div>
+                         </Draggable>
+                         <CardTitle>{service.title}</CardTitle>
+                       </CardHeader>
+                       <CardContent className="flex-grow mt-2">
+                         <p className="text-muted-foreground">{service.description}</p>
+                       </CardContent>
+                     </Card>
+                   </Link>
                 </div>
               ))}
             </div>

@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import anime from 'animejs';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lightbulb, User, Users } from "lucide-react";
+import { Lightbulb, User, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Plant1 } from "@/components/ui/Plant1";
 import { Plant2 } from "@/components/ui/Plant2";
@@ -16,17 +16,20 @@ const services = [
   {
     icon: User,
     title: "Terapia Individual",
+    href: "/servicos/terapia-individual",
     description: "Um espaço seguro e confidencial para você explorar suas emoções, lidar com ansiedade, depressão, estresse, e promover o autoconhecimento e o crescimento pessoal.",
   },
   {
     icon: Users,
     title: "Terapia de Casal",
+    href: "/servicos/terapia-de-casal",
     description: "Dedicada a casais que buscam melhorar a comunicação, resolver conflitos, reconstruir a confiança e fortalecer o vínculo afetivo para um relacionamento mais saudável.",
   },
   {
     icon: Lightbulb,
     title: "Orientação Profissional",
-    description: "Processo focado em ajudar jovens e adultos na escolha ou transição de carreira, alinhando paixões, habilidades e oportunidades de mercado para uma trajetória profissional satisfatória.",
+    href: "/servicos/orientacao-profissional",
+    description: "Processo focado em ajudar jovens e adultos na escolha ou transição de carreira, alinhando paixões, habilidades e oportunidades de mercado.",
   },
 ];
 
@@ -85,19 +88,24 @@ export default function ServicosPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {services.map((service, index) => (
               <div key={index} data-anime className="h-full">
-                <Card className="interactive-card flex flex-col text-center items-center p-6 bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 h-full rounded-2xl">
-                  <CardHeader className="p-0 items-center">
-                    <Draggable>
-                      <div className="p-4 bg-background rounded-full mb-4 inline-block">
-                        <service.icon className="w-8 h-8 text-primary" />
-                      </div>
-                    </Draggable>
-                    <CardTitle className="text-2xl">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="mt-4 flex-grow">
-                    <p className="text-muted-foreground">{service.description}</p>
-                  </CardContent>
-                </Card>
+                <Link href={service.href} className="block h-full group">
+                  <Card className="interactive-card flex flex-col text-center items-center p-6 bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 h-full rounded-2xl">
+                    <CardHeader className="p-0 items-center">
+                      <Draggable>
+                        <div className="p-4 bg-background rounded-full mb-4 inline-block">
+                          <service.icon className="w-8 h-8 text-primary" />
+                        </div>
+                      </Draggable>
+                      <CardTitle className="text-2xl">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="mt-4 flex-grow">
+                      <p className="text-muted-foreground">{service.description}</p>
+                    </CardContent>
+                    <div className="font-semibold text-primary flex items-center justify-center group-hover:text-accent-foreground mt-4">
+                      Saiba mais <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </Card>
+                </Link>
               </div>
             ))}
           </div>
@@ -114,7 +122,7 @@ export default function ServicosPage() {
               <Card className="overflow-hidden shadow-xl rounded-2xl w-full max-w-[400px]">
                 <Image
                     src="https://placehold.co/600x400.png"
-                    alt="Espaço terapêutico calmo e acolhedor"
+                    alt="Espaço terapêutico calmo e acolhedor, simbolizando a abordagem da psicóloga."
                     width={600}
                     height={400}
                     className="object-cover w-full h-full"

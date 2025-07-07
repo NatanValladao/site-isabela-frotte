@@ -5,9 +5,15 @@ const Footer = () => {
   const navLinks = [
     { href: "/", label: "Início" },
     { href: "/sobre", label: "Sobre" },
-    { href: "/servicos", label: "Serviços" },
     { href: "/blog", label: "Blog" },
     { href: "/contato", label: "Contato" },
+  ];
+
+  const serviceLinks = [
+    { href: "/servicos", label: "Visão Geral" },
+    { href: "/servicos/terapia-individual", label: "Terapia Individual" },
+    { href: "/servicos/terapia-de-casal", label: "Terapia de Casal" },
+    { href: "/servicos/orientacao-profissional", label: "Orientação Profissional" },
   ];
 
   return (
@@ -36,6 +42,19 @@ const Footer = () => {
               <p className="font-headline font-semibold">Navegação</p>
               <ul className="mt-4 space-y-2 text-sm">
                 {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <p className="font-headline font-semibold">Serviços</p>
+              <ul className="mt-4 space-y-2 text-sm">
+                {serviceLinks.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                       {link.label}
