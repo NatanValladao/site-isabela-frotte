@@ -115,9 +115,9 @@ export default function BlogPage() {
         ref={postsRef}
         className="py-16 md:py-24 relative overflow-hidden"
       >
-        <Plant1 className="absolute -top-24 -left-24 w-96 h-96 text-accent/50 opacity-10 -z-10" />
-        <Plant3 className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary/70 opacity-20 -z-10 transform scale-x-[-1]" />
-        <Plant2 className="absolute top-1/2 -right-48 w-96 h-96 text-primary/10 opacity-40 -z-10" />
+        <Plant1 className="absolute -top-24 -left-24 w-96 h-96 text-accent/50 opacity-20 -z-10" />
+        <Plant3 className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
+        <Plant2 className="absolute top-1/2 -right-48 w-96 h-96 text-primary/10 opacity-50 -z-10" />
 
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

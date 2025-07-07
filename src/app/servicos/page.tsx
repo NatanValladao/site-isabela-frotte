@@ -4,11 +4,12 @@ import { useEffect, useRef } from 'react';
 import anime from 'animejs';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HeartHandshake, Lightbulb, User, Users } from "lucide-react";
+import { Lightbulb, User, Users } from "lucide-react";
 import Link from "next/link";
 import { Plant1 } from "@/components/ui/Plant1";
 import { Plant2 } from "@/components/ui/Plant2";
 import { Plant3 } from "@/components/ui/Plant3";
+import { InteractivePlant } from '@/components/ui/InteractivePlant';
 
 const services = [
   {
@@ -106,15 +107,10 @@ export default function ServicosPage() {
           <Plant2 className="absolute -top-20 -right-20 w-80 h-80 text-secondary/40 opacity-50 -z-10 transform scale-x-[-1] rotate-45" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div data-anime className="relative h-80 md:h-[450px]">
-                <div className="absolute top-0 left-0 w-full h-full bg-accent/10 rounded-2xl" style={{animation: 'float-alt 10s ease-in-out infinite'}}/>
-                <div className="absolute top-0 left-0 w-full h-full bg-secondary/50 rounded-2xl" style={{animation: 'float 8s ease-in-out infinite'}} />
-                <div className="relative w-full h-full bg-card/80 backdrop-blur-sm border rounded-2xl shadow-lg flex items-center justify-center p-8">
-                    <div className="text-center transition-transform duration-300 hover:scale-110">
-                        <HeartHandshake className="w-24 h-24 text-primary mx-auto" />
-                        <p className="mt-4 text-xl font-headline text-primary">Cuidado e Parceria</p>
-                    </div>
-                </div>
+            <div data-anime className="relative h-80 md:h-[450px] flex items-center justify-center">
+              <div className="relative w-full h-full max-w-[400px] max-h-[400px] bg-card/80 backdrop-blur-sm border rounded-2xl shadow-lg flex items-center justify-center p-8">
+                  <InteractivePlant className="w-full h-full text-primary" />
+              </div>
             </div>
             <div data-anime>
               <h2 className="text-3xl font-bold mb-4">Minha Abordagem Terapêutica</h2>
@@ -133,18 +129,6 @@ export default function ServicosPage() {
           </div>
         </div>
       </section>
-      <style jsx>{`
-        @keyframes float {
-          0% { transform: rotate(0deg) scale(1); }
-          50% { transform: rotate(-3deg) scale(1.02); }
-          100% { transform: rotate(0deg) scale(1); }
-        }
-        @keyframes float-alt {
-          0% { transform: rotate(0deg) scale(1.05); }
-          50% { transform: rotate(3deg) scale(1); }
-          100% { transform: rotate(0deg) scale(1.05); }
-        }
-      `}</style>
     </>
   );
 }

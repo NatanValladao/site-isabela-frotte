@@ -65,13 +65,13 @@ export default function SobrePage() {
       ref={pageRef}
       className="container mx-auto px-4 py-16 sm:px-6 lg:px-8 relative overflow-hidden"
     >
-      <Plant1 className="absolute -bottom-24 -right-24 w-96 h-96 text-secondary/70 opacity-20 -z-10 transform scale-x-[-1]" />
-      <Plant3 className="absolute top-1/2 -left-36 w-96 h-96 text-primary/10 opacity-60 -z-10 transform -rotate-45" />
+      <Plant1 className="absolute -bottom-24 -right-24 w-96 h-96 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
+      <Plant3 className="absolute top-1/2 -left-36 w-96 h-96 text-primary/10 opacity-70 -z-10 transform -rotate-45" />
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
         
         <div className="md:col-span-5 lg:col-span-5 relative" data-anime>
-          <Plant2 className="absolute -top-16 -left-16 w-64 h-64 text-accent/30 opacity-60 -z-20 transform -rotate-45" />
+          <Plant2 className="absolute -top-16 -left-16 w-64 h-64 text-accent/30 opacity-70 -z-20 transform -rotate-45" />
           <div 
             className="absolute top-[-1rem] left-[-1rem] md:top-[-2rem] md:left-[-2rem] w-full h-full bg-accent/20 rounded-2xl -z-10"
             style={{ animation: 'float 8s ease-in-out infinite' }}
