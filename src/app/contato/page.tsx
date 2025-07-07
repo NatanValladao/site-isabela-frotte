@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from 'react';
+import anime from 'animejs';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,47 +11,59 @@ import { Plant1 } from "@/components/ui/Plant1";
 import { Plant2 } from "@/components/ui/Plant2";
 import { Plant3 } from "@/components/ui/Plant3";
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.2 }
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  },
-};
 
 export default function ContatoPage() {
+  const headerRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLElement>(null);
+
+  const animateOnScroll = (element: HTMLElement | null, stagger = 150) => {
+    if (!element) return;
+    const elementsToAnimate = Array.from(element.querySelectorAll("[data-anime]"));
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            anime({
+              targets: elementsToAnimate,
+              translateY: [20, 0],
+              opacity: [0, 1],
+              delay: anime.stagger(stagger),
+              duration: 800,
+              easing: 'easeOutExpo',
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  };
+  
+  useEffect(() => {
+    animateOnScroll(headerRef.current, 100);
+    animateOnScroll(contentRef.current, 100);
+  }, []);
+
   return (
     <>
-      <motion.section 
+      <section 
+        ref={headerRef}
         className="py-16 md:py-24 bg-secondary/20"
-        initial="hidden"
-        animate="visible"
-        variants={sectionVariants}
       >
         <div className="container mx-auto px-4 text-center">
-          <motion.h1 className="text-4xl md:text-5xl font-bold tracking-tight" variants={itemVariants}>Entre em Contato</motion.h1>
-          <motion.p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground" variants={itemVariants}>
+          <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight">Entre em Contato</h1>
+          <p data-anime className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Estou aqui para ouvir você. Utilize as informações abaixo ou preencha o formulário para agendar uma conversa inicial.
-          </motion.p>
+          </p>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section 
+      <section 
+        ref={contentRef}
         className="py-16 md:py-24 relative overflow-hidden"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
       >
         <div className="container mx-auto px-4 relative">
           <Plant2 className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary/70 opacity-20 -z-10 transform scale-x-[-1]" />
@@ -58,7 +71,7 @@ export default function ContatoPage() {
           <Plant1 className="absolute bottom-1/4 -right-36 w-80 h-80 text-primary/10 opacity-30 -z-10 transform rotate-45" />
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
-            <motion.div className="md:col-span-5" variants={itemVariants}>
+            <div className="md:col-span-5" data-anime>
               <h2 className="text-3xl font-bold mb-6">Informações de Contato</h2>
               <div className="space-y-6">
                 {[
@@ -66,17 +79,15 @@ export default function ContatoPage() {
                   { icon: Phone, title: "Telefone", desc: "Para contato via WhatsApp ou ligação.", link: "tel:+5511999999999", text: "(11) 99999-9999" },
                   { icon: MapPin, title: "Localização", desc: "Atendimento presencial e online.", text: "Rua Fictícia, 123 - São Paulo, SP", isLink: false }
                 ].map((info, index) => (
-                  <motion.div 
+                  <div 
                     key={index} 
-                    className="flex items-start gap-4"
-                    whileHover={{ x: 5 }}
+                    className="flex items-start gap-4 group"
                   >
-                    <motion.div 
-                      className="p-3 bg-accent/20 rounded-full"
-                      whileHover={{ scale: 1.2, rotate: 10}}
+                    <div 
+                      className="p-3 bg-accent/20 rounded-full transition-all duration-300 group-hover:scale-125 group-hover:rotate-12"
                     >
                       <info.icon className="w-6 h-6 text-primary" />
-                    </motion.div>
+                    </div>
                     <div>
                       <h3 className="text-xl font-semibold">{info.title}</h3>
                       <p className="text-muted-foreground">{info.desc}</p>
@@ -88,12 +99,12 @@ export default function ContatoPage() {
                         <p className="font-medium text-primary">{info.text}</p>
                       )}
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div className="md:col-span-7 bg-card/60 p-8 rounded-2xl shadow-lg border" variants={itemVariants}>
+            <div className="md:col-span-7 bg-card/60 p-8 rounded-2xl shadow-lg border" data-anime>
               <h2 className="text-3xl font-bold mb-6">Envie uma Mensagem</h2>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -114,16 +125,16 @@ export default function ContatoPage() {
                   <Label htmlFor="message">Sua Mensagem</Label>
                   <Textarea id="message" placeholder="Escreva sua mensagem aqui..." rows={5} />
                 </div>
-                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                <div className="interactive-button">
                   <Button type="submit" size="lg" className="w-full font-semibold">
                     Enviar Mensagem
                   </Button>
-                </motion.div>
+                </div>
               </form>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </motion.section>
+      </section>
     </>
   );
 }

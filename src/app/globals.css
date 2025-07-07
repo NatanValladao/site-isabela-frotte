@@ -76,3 +76,22 @@
     @apply font-headline;
   }
 }
+
+@layer components {
+  .interactive-card {
+    @apply transition-all duration-300 ease-out;
+  }
+  .interactive-card:hover {
+    @apply shadow-xl -translate-y-2;
+  }
+
+  .interactive-button {
+     @apply transition-transform duration-200 ease-out;
+  }
+  .interactive-button:hover {
+      @apply scale-105;
+  }
+  .interactive-button:active {
+      @apply scale-95;
+  }
+}

@@ -1,66 +1,93 @@
 "use client";
 
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import anime from 'animejs';
 import { cn } from '@/lib/utils';
 import { Leaf } from 'lucide-react';
 
 export default function SplashScreen({ onAnimationComplete }: { onAnimationComplete: () => void }) {
-  const [animationStage, setAnimationStage] = useState('intro'); // intro -> outro
+  const splashRef = useRef<HTMLDivElement>(null);
+  const circleRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    const outroTimer = setTimeout(() => {
-      setAnimationStage('outro');
-    }, 2000); // Start exit animation
-    
-    const completeTimer = setTimeout(() => {
-      onAnimationComplete();
-    }, 3200); // Animation complete
+    const tl = anime.timeline({
+      easing: 'easeOutExpo',
+      complete: () => {
+        setTimeout(onAnimationComplete, 200);
+      }
+    });
 
-    return () => {
-      clearTimeout(outroTimer);
-      clearTimeout(completeTimer);
-    };
+    tl.add({
+      targets: logoRef.current,
+      scale: [0, 1],
+      rotate: [-180, 0],
+      duration: 1000,
+    })
+    .add({
+      targets: textRef.current,
+      translateY: [20, 0],
+      opacity: [0, 1],
+      duration: 800,
+    }, '-=600')
+    .add({
+      targets: contentRef.current,
+      opacity: 0,
+      scale: 0.8,
+      duration: 500,
+      delay: 500,
+    })
+    .add({
+      targets: circleRef.current,
+      scale: [0, 40],
+      duration: 1000,
+    }, '-=500')
+    .add({
+        targets: splashRef.current,
+        opacity: 0,
+        duration: 500,
+        begin: () => {
+          if (splashRef.current) {
+             splashRef.current.style.pointerEvents = 'none';
+          }
+        }
+    }, '-=600');
+    
   }, [onAnimationComplete]);
 
   return (
-    <motion.div
+    <div
+      ref={splashRef}
       aria-hidden="true"
       className={cn('fixed inset-0 z-50 flex items-center justify-center bg-background')}
-      animate={{ opacity: animationStage === 'outro' ? 0 : 1 }}
-      transition={{ duration: 0.5, delay: 0.7 }}
     >
-      <motion.div
+      <div
+        ref={circleRef}
         className='absolute rounded-full bg-accent'
-        initial={{ scale: 0 }}
-        animate={{ scale: animationStage === 'outro' ? 40 : 0 }}
-        transition={{ duration: 1.0, ease: 'circOut' }}
-        style={{ width: '100px', height: '100px' }}
+        style={{ width: '100px', height: '100px', transform: 'scale(0)' }}
       />
       
-      <motion.div
+      <div
+        ref={contentRef}
         className="relative flex flex-col items-center"
-        animate={{ opacity: animationStage === 'outro' ? 0 : 1, scale: animationStage === 'outro' ? 0.8 : 1 }}
-        transition={{ duration: 0.5 }}
       >
-        <motion.div
+        <div
+          ref={logoRef}
           className="p-4 bg-background/50 rounded-full mb-4"
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ type: 'spring', stiffness: 100, damping: 15, delay: 0.2 }}
         >
           <Leaf className="w-12 h-12 text-primary" />
-        </motion.div>
+        </div>
         
-        <motion.h1
+        <h1
+          ref={textRef}
           className="font-headline text-4xl text-primary z-10"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.8 }}
+          style={{ opacity: 0 }}
         >
           Psicóloga Isabela
-        </motion.h1>
-      </motion.div>
-    </motion.div>
+        </h1>
+      </div>
+    </div>
   );
 }

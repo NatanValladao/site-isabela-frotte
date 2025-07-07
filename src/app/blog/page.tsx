@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import anime from "animejs";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
@@ -61,47 +62,58 @@ const blogPosts = [
   },
 ];
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut", staggerChildren: 0.2 }
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  },
-};
-
 export default function BlogPage() {
+  const headerRef = useRef<HTMLElement>(null);
+  const postsRef = useRef<HTMLElement>(null);
+
+  const animateOnScroll = (element: HTMLElement | null, stagger = 150) => {
+    if (!element) return;
+    const elementsToAnimate = Array.from(element.querySelectorAll("[data-anime]"));
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            anime({
+              targets: elementsToAnimate,
+              translateY: [20, 0],
+              opacity: [0, 1],
+              delay: anime.stagger(stagger),
+              duration: 800,
+              easing: 'easeOutExpo',
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  };
+  
+  useEffect(() => {
+    animateOnScroll(headerRef.current, 100);
+    animateOnScroll(postsRef.current, 100);
+  }, []);
+
   return (
     <>
-      <motion.section 
+      <section 
+        ref={headerRef}
         className="py-16 md:py-24 bg-secondary/20"
-        initial="hidden"
-        animate="visible"
-        variants={sectionVariants}
       >
         <div className="container mx-auto px-4 text-center">
-          <motion.h1 className="text-4xl md:text-5xl font-bold tracking-tight" variants={itemVariants}>Blog</motion.h1>
-          <motion.p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground" variants={itemVariants}>
+          <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight">Blog</h1>
+          <p data-anime className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Reflexões, dicas e informações sobre psicologia e bem-estar para apoiar sua jornada.
-          </motion.p>
+          </p>
         </div>
-      </motion.section>
+      </section>
 
-      <motion.section 
+      <section 
+        ref={postsRef}
         className="py-16 md:py-24 relative overflow-hidden"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={sectionVariants}
       >
         <Plant1 className="absolute -top-24 -left-24 w-96 h-96 text-accent/50 opacity-10 -z-10" />
         <Plant3 className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary/70 opacity-20 -z-10 transform scale-x-[-1]" />
@@ -110,10 +122,10 @@ export default function BlogPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <motion.div key={post.title} variants={itemVariants}>
-                <Card className="flex flex-col overflow-hidden group bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 hover:shadow-lg transition-all duration-300 rounded-2xl h-full">
+              <div key={post.title} data-anime>
+                <Card className="interactive-card flex flex-col overflow-hidden group bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 rounded-2xl h-full">
                   <div className="overflow-hidden rounded-t-2xl">
-                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.5 }}>
+                    <div className="transition-transform duration-500 group-hover:scale-105">
                       <Image
                         src={post.image}
                         alt={`Imagem para o post: ${post.title}`}
@@ -122,7 +134,7 @@ export default function BlogPage() {
                         className="object-cover w-full h-48"
                         data-ai-hint={post.aiHint}
                       />
-                    </motion.div>
+                    </div>
                   </div>
                   <CardHeader>
                     <Badge variant="outline" className="w-fit mb-2 bg-background">{post.category}</Badge>
@@ -137,11 +149,11 @@ export default function BlogPage() {
                     </Link>
                   </CardFooter>
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
     </>
   );
 }
