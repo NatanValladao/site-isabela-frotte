@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { InteractivePlant } from "@/components/ui/InteractivePlant";
 
 export default function ContatoPage() {
   return (
@@ -16,8 +17,11 @@ export default function ContatoPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        <div className="container mx-auto px-4 relative">
+          <InteractivePlant className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary opacity-20 -z-10 transform scale-x-[-1]" />
+          <InteractivePlant className="absolute -top-24 -left-24 w-72 h-72 text-accent/20 opacity-40 -z-10" />
+
           <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
             <div className="md:col-span-5">
               <h2 className="text-3xl font-bold mb-6">Informações de Contato</h2>
@@ -61,7 +65,7 @@ export default function ContatoPage() {
               </div>
             </div>
 
-            <div className="md:col-span-7 bg-card p-8 rounded-lg shadow-lg border">
+            <div className="md:col-span-7 bg-card/60 p-8 rounded-2xl shadow-lg border">
               <h2 className="text-3xl font-bold mb-6">Envie uma Mensagem</h2>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

@@ -49,7 +49,8 @@ export default function Home() {
         </section>
 
         <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
-          <div className="container px-4 md:px-6">
+          <div className="container px-4 md:px-6 relative">
+            <InteractivePlant className="absolute -bottom-12 -right-12 w-64 h-64 text-secondary opacity-30 -z-10" />
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground font-medium">Nossos Serviços</div>
@@ -59,31 +60,37 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
-              <Card className="hover:shadow-lg transition-shadow duration-300 border-t-4 border-accent">
-                <CardHeader>
-                  <User className="w-8 h-8 mb-2 text-primary" />
+            <div className="mx-auto grid max-w-5xl items-stretch gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
+              <Card className="bg-card/50 border-0 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center p-6 rounded-2xl">
+                <CardHeader className="p-0 items-center">
+                  <div className="p-4 bg-background rounded-full mb-4 inline-block">
+                    <User className="w-8 h-8 text-primary" />
+                  </div>
                   <CardTitle>Terapia Individual</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow mt-2">
                   <p className="text-muted-foreground">Um espaço confidencial para explorar suas emoções, desafios e potenciais.</p>
                 </CardContent>
               </Card>
-              <Card className="hover:shadow-lg transition-shadow duration-300 border-t-4 border-accent">
-                <CardHeader>
-                  <Users className="w-8 h-8 mb-2 text-primary" />
+              <Card className="bg-card/50 border-0 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center p-6 rounded-2xl">
+                <CardHeader className="p-0 items-center">
+                   <div className="p-4 bg-background rounded-full mb-4 inline-block">
+                    <Users className="w-8 h-8 text-primary" />
+                  </div>
                   <CardTitle>Terapia de Casal</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow mt-2">
                   <p className="text-muted-foreground">Fortaleça a comunicação, a confiança e a conexão em seu relacionamento.</p>
                 </CardContent>
               </Card>
-              <Card className="hover:shadow-lg transition-shadow duration-300 border-t-4 border-accent">
-                <CardHeader>
-                  <Brain className="w-8 h-8 mb-2 text-primary" />
+              <Card className="bg-card/50 border-0 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center p-6 rounded-2xl">
+                <CardHeader className="p-0 items-center">
+                   <div className="p-4 bg-background rounded-full mb-4 inline-block">
+                    <Brain className="w-8 h-8 text-primary" />
+                  </div>
                   <CardTitle>Orientação Profissional</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow mt-2">
                   <p className="text-muted-foreground">Encontre clareza e direção para sua carreira e desenvolvimento profissional.</p>
                 </CardContent>
               </Card>

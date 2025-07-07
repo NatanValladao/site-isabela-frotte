@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BrainCircuit, HeartHandshake, Lightbulb, User, Users } from "lucide-react";
+import { HeartHandshake, Lightbulb, User, Users } from "lucide-react";
 import Link from "next/link";
+import { InteractivePlant } from "@/components/ui/InteractivePlant";
 
 const services = [
   {
@@ -35,13 +36,13 @@ export default function ServicosPage() {
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {services.map((service, index) => (
-              <Card key={index} className="flex flex-col text-center items-center p-6 border-t-4 border-accent hover:shadow-xl transition-shadow duration-300">
-                <div className="p-4 bg-accent/20 rounded-full mb-4">
-                  <service.icon className="w-8 h-8 text-primary" />
-                </div>
-                <CardHeader className="p-0">
+              <Card key={index} className="flex flex-col text-center items-center p-6 border-0 bg-card/50 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 rounded-2xl">
+                <CardHeader className="p-0 items-center">
+                  <div className="p-4 bg-background rounded-full mb-4">
+                    <service.icon className="w-8 h-8 text-primary" />
+                  </div>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="mt-4 flex-grow">
@@ -53,13 +54,20 @@ export default function ServicosPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-secondary/20">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-24 bg-secondary/20 overflow-hidden">
+        <div className="container mx-auto px-4 relative">
+          <InteractivePlant className="absolute -bottom-20 -left-20 w-72 h-72 text-accent/30 opacity-50 -z-10 transform -rotate-12" />
+          <InteractivePlant className="absolute -top-20 -right-20 w-80 h-80 text-secondary/40 opacity-50 -z-10 transform scale-x-[-1] rotate-45" />
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-80 md:h-96">
-                <div className="absolute -top-4 -left-4 w-full h-full bg-accent/20 rounded-lg -z-10"></div>
-                <div className="w-full h-full bg-secondary rounded-lg shadow-lg flex items-center justify-center p-8">
-                    <HeartHandshake className="w-24 h-24 text-primary" />
+            <div className="relative h-80 md:h-[450px]">
+                <div className="absolute top-0 left-0 w-full h-full bg-accent/10 rounded-2xl transform rotate-3"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-secondary/50 rounded-2xl transform -rotate-3"></div>
+                <div className="relative w-full h-full bg-card/80 backdrop-blur-sm border rounded-2xl shadow-lg flex items-center justify-center p-8">
+                    <div className="text-center">
+                        <HeartHandshake className="w-24 h-24 text-primary mx-auto" />
+                        <p className="mt-4 text-xl font-headline text-primary">Cuidado e Parceria</p>
+                    </div>
                 </div>
             </div>
             <div>

@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { InteractivePlant } from "@/components/ui/InteractivePlant";
 
 const blogPosts = [
   {
@@ -67,12 +68,14 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        <InteractivePlant className="absolute -top-24 -left-24 w-96 h-96 text-accent opacity-10 -z-10" />
+        <InteractivePlant className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary opacity-20 -z-10 transform scale-x-[-1]" />
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
-              <Card key={post.title} className="flex flex-col overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-                <div className="overflow-hidden">
+              <Card key={post.title} className="flex flex-col overflow-hidden group border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl bg-card/50">
+                <div className="overflow-hidden rounded-t-2xl">
                   <Image
                     src={post.image}
                     alt={`Imagem para o post: ${post.title}`}
@@ -83,7 +86,7 @@ export default function BlogPage() {
                   />
                 </div>
                 <CardHeader>
-                  <Badge variant="outline" className="w-fit mb-2">{post.category}</Badge>
+                  <Badge variant="outline" className="w-fit mb-2 bg-background">{post.category}</Badge>
                   <CardTitle className="text-xl">{post.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
