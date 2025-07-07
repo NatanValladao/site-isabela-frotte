@@ -10,65 +10,10 @@ import { ArrowRight } from "lucide-react";
 import { Plant1 } from "@/components/ui/Plant1";
 import { Plant3 } from "@/components/ui/Plant3";
 import { Plant2 } from "@/components/ui/Plant2";
+import type { Post } from "@/lib/types";
+import { urlFor } from "@/lib/sanity";
 
-const blogPosts = [
-  {
-    title: "5 Dicas para Gerenciar a Ansiedade no Dia a Dia",
-    category: "Ansiedade",
-    excerpt: "A ansiedade faz parte da vida, mas não precisa controlá-la. Descubra estratégias práticas para encontrar mais calma e equilíbrio.",
-    image: "https://placehold.co/600x400.png",
-    alt: "Pessoa praticando meditação para gerenciar a ansiedade.",
-    aiHint: "calm person meditating",
-    href: "#",
-  },
-  {
-    title: "A Importância do Autocuidado para a Saúde Mental",
-    category: "Bem-estar",
-    excerpt: "O autocuidado vai além de um dia de spa. Entenda como pequenas práticas diárias podem fortalecer sua saúde mental e emocional.",
-    image: "https://placehold.co/600x400.png",
-    alt: "Cena representando um estilo de vida saudável e práticas de autocuidado.",
-    aiHint: "healthy lifestyle",
-    href: "#",
-  },
-  {
-    title: "Como Lidar com o Luto: Um Guia Gentil",
-    category: "Luto",
-    excerpt: "Enfrentar a perda é um dos maiores desafios da vida. Este guia oferece um olhar compassivo sobre o processo do luto e como navegá-lo.",
-    image: "https://placehold.co/600x400.png",
-    alt: "Imagem simbolizando esperança e superação, como um nascer do sol.",
-    aiHint: "hope sunrise",
-    href: "#",
-  },
-    {
-    title: "Comunicação Não-Violenta em Relacionamentos",
-    category: "Relacionamentos",
-    excerpt: "Aprenda a expressar suas necessidades e ouvir as do outro de forma empática, transformando a dinâmica de seus relacionamentos.",
-    image: "https://placehold.co/600x400.png",
-    alt: "Casal conversando de forma empática e aberta.",
-    aiHint: "couple talking",
-    href: "#",
-  },
-  {
-    title: "Entendendo a Síndrome de Burnout",
-    category: "Carreira",
-    excerpt: "O esgotamento profissional é sério. Saiba identificar os sinais, as causas e, o mais importante, como prevenir e tratar o burnout.",
-    image: "https://placehold.co/600x400.png",
-    alt: "Profissional estressado em um ambiente de escritório, representando o burnout.",
-    aiHint: "stressed person office",
-    href: "#",
-  },
-    {
-    title: "O Poder da Vulnerabilidade",
-    category: "Autoconhecimento",
-    excerpt: "Ser vulnerável não é fraqueza, mas sim um ato de coragem que nos conecta com nós mesmos e com os outros de forma mais autêntica.",
-    image: "https://placehold.co/600x400.png",
-    alt: "Mãos abertas em um gesto de vulnerabilidade e aceitação.",
-    aiHint: "open hands",
-    href: "#",
-  },
-];
-
-export default function BlogClient() {
+export default function BlogClient({ posts }: { posts: Post[] }) {
   const headerRef = useRef<HTMLElement>(null);
   const postsRef = useRef<HTMLElement>(null);
 
@@ -127,30 +72,38 @@ export default function BlogClient() {
 
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <div key={post.title} data-anime>
+            {posts.map((post) => (
+              <div key={post._id} data-anime>
                 <Card className="interactive-card flex flex-col overflow-hidden group bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 rounded-2xl h-full">
                   <div className="overflow-hidden rounded-t-2xl">
-                    <div className="transition-transform duration-500 group-hover:scale-105">
-                      <Image
-                        src={post.image}
-                        alt={post.alt}
-                        width={600}
-                        height={400}
-                        className="object-cover w-full h-48"
-                        data-ai-hint={post.aiHint}
-                      />
-                    </div>
+                    <Link href={`/blog/${post.slug?.current}`} className="block">
+                      <div className="transition-transform duration-500 group-hover:scale-105">
+                        {post.mainImage ? (
+                           <Image
+                            src={urlFor(post.mainImage).width(600).height(400).url()}
+                            alt={post.title || 'Blog post image'}
+                            width={600}
+                            height={400}
+                            className="object-cover w-full h-48"
+                            data-ai-hint="blog abstract"
+                          />
+                        ) : (
+                          <div className="w-full h-48 bg-secondary flex items-center justify-center">
+                             <span className="text-muted-foreground">Sem imagem</span>
+                          </div>
+                        )}
+                      </div>
+                    </Link>
                   </div>
                   <CardHeader>
-                    <Badge variant="outline" className="w-fit mb-2 bg-background">{post.category}</Badge>
+                    <Badge variant="outline" className="w-fit mb-2 bg-background">{post.category || 'Artigo'}</Badge>
                     <CardTitle className="text-xl">{post.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <CardDescription>{post.excerpt}</CardDescription>
                   </CardContent>
                   <CardFooter>
-                    <Link href={post.href} className="font-semibold text-primary flex items-center group-hover:text-accent-foreground">
+                    <Link href={`/blog/${post.slug?.current}`} className="font-semibold text-primary flex items-center group-hover:text-accent-foreground">
                       Ler mais <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </CardFooter>
