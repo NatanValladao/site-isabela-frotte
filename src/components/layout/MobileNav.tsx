@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -39,12 +39,6 @@ const MobileNav = () => {
             <span className="font-headline text-lg font-bold">Isabela Frotté Mello</span>
           </Link>
           <SheetTitle className="sr-only">Menu de Navegação</SheetTitle>
-          <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                  <X className="h-6 w-6" />
-                  <span className="sr-only">Fechar menu</span>
-              </Button>
-          </SheetTrigger>
         </div>
         <nav className="mt-8 flex-1 flex-col space-y-2 px-6">
           {navLinks.map((link) => (
