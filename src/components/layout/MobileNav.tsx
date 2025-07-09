@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
@@ -38,6 +38,7 @@ const MobileNav = () => {
           <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
             <span className="font-headline text-lg font-bold">Isabela Frotté Mello</span>
           </Link>
+          <SheetTitle className="sr-only">Menu de Navegação</SheetTitle>
           <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                   <X className="h-6 w-6" />
