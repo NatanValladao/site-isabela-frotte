@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import anime from 'animejs';
 import { cn } from '@/lib/utils';
-import { Leaf } from 'lucide-react';
+import { Brain } from 'lucide-react';
 
 export default function SplashScreen({ onAnimationComplete }: { onAnimationComplete: () => void }) {
   const splashRef = useRef<HTMLDivElement>(null);
@@ -47,7 +47,6 @@ export default function SplashScreen({ onAnimationComplete }: { onAnimationCompl
     .add({
         targets: splashRef.current,
         opacity: 0,
-        duration: 500,
         begin: () => {
           if (splashRef.current) {
              splashRef.current.style.pointerEvents = 'none';
@@ -77,15 +76,15 @@ export default function SplashScreen({ onAnimationComplete }: { onAnimationCompl
           ref={logoRef}
           className="p-4 bg-background/50 rounded-full mb-4"
         >
-          <Leaf className="w-12 h-12 text-primary" />
+          <Brain className="w-12 h-12 text-primary" />
         </div>
         
         <h1
           ref={textRef}
-          className="font-headline text-4xl text-primary z-10"
+          className="font-headline text-3xl text-primary z-10"
           style={{ opacity: 0 }}
         >
-          Psicóloga Isabela
+          Isabela Frotté Mello
         </h1>
       </div>
     </div>

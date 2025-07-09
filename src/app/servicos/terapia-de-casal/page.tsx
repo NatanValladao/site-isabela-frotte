@@ -7,9 +7,9 @@ import { Plant1 } from '@/components/ui/Plant1';
 import { Plant3 } from '@/components/ui/Plant3';
 
 export const metadata: Metadata = {
-  title: 'Terapia de Casal com Psicóloga Isabela | Fortaleça seu Relacionamento',
-  description: 'Melhore a comunicação e a conexão no seu relacionamento. A terapia de casal oferece um espaço neutro para resolver conflitos e reconstruir a confiança.',
-  keywords: 'terapia de casal, psicóloga de casal, relacionamento, comunicação, conflitos',
+  title: 'Terapia de Casal Online com Isabela Frotté Mello',
+  description: 'Fortaleça a comunicação e a conexão no seu relacionamento. A terapia de casal com a psicóloga Isabela Frotté Mello oferece um espaço para resolver conflitos.',
+  keywords: 'terapia de casal, psicóloga de casal, relacionamento, comunicação, conflitos, TCC casal',
 };
 
 export default function TerapiaDeCasalPage() {
@@ -55,7 +55,10 @@ export default function TerapiaDeCasalPage() {
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter">Fortalecendo a Conexão a Dois</h2>
                 <p className="text-muted-foreground">
-                  Todo relacionamento passa por desafios. A terapia de casal oferece um ambiente neutro e seguro, com a mediação de uma profissional, para que vocês possam dialogar, expressar sentimentos e necessidades de forma clara e respeitosa. O objetivo é encontrar novas formas de se relacionar, superando obstáculos e redescobrindo a parceria.
+                  Todo relacionamento passa por desafios. A terapia de casal oferece um ambiente neutro e seguro, com a mediação de uma profissional, para que vocês possam dialogar, expressar sentimentos e necessidades de forma clara e respeitosa. Com base na Terapia Cognitivo-Comportamental, trabalhamos para identificar e ajustar padrões que geram conflito.
+                </p>
+                 <p className="text-muted-foreground">
+                  O objetivo é encontrar novas formas de se relacionar, superando obstáculos e redescobrindo a parceria.
                 </p>
                 <ul className="space-y-3 mt-6">
                   {benefits.map((benefit, index) => (
@@ -76,7 +79,7 @@ export default function TerapiaDeCasalPage() {
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Prontos para Reconstruir a Harmonia?</h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Investir no seu relacionamento é investir na felicidade de ambos. Agendem uma conversa para começarmos.
+                Investir no seu relacionamento é investir na felicidade de ambos. Agendem uma conversa online para começarmos.
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm space-y-2 interactive-button">

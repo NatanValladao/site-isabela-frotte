@@ -26,8 +26,8 @@ async function getPosts(): Promise<Post[]> {
 
 export const metadata: Metadata = {
   title: 'Blog | Psicologia, Saúde Mental e Bem-Estar',
-  description: 'Artigos e reflexões sobre psicologia, saúde mental e bem-estar. Encontre dicas para gerenciar a ansiedade, melhorar relacionamentos e cuidar de você.',
-  keywords: 'blog psicologia, saúde mental, bem-estar, ansiedade, autocuidado, relacionamentos',
+  description: 'Artigos e reflexões sobre psicologia, TCC, neurodiversidade e bem-estar, escritos por Isabela Frotté Mello.',
+  keywords: 'blog psicologia, saúde mental, bem-estar, TCC, neurodiversidade, autoconhecimento',
 };
 
 export default async function BlogPage() {

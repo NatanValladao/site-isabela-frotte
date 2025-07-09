@@ -32,7 +32,7 @@ const MobileNav = () => {
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between border-b pb-4">
             <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-              <span className="font-headline text-xl font-bold">Psicóloga Isabela</span>
+              <span className="font-headline text-lg font-bold">Isabela Frotté Mello</span>
             </Link>
             <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">

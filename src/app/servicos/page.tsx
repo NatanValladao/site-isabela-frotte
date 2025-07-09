@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import anime from 'animejs';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lightbulb, User, Users, ArrowRight } from "lucide-react";
+import { BrainCircuit, User, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Plant1 } from "@/components/ui/Plant1";
 import { Plant2 } from "@/components/ui/Plant2";
@@ -17,19 +17,19 @@ const services = [
     icon: User,
     title: "Terapia Individual",
     href: "/servicos/terapia-individual",
-    description: "Um espaço seguro e confidencial para você explorar suas emoções, lidar com ansiedade, depressão, estresse, e promover o autoconhecimento e o crescimento pessoal.",
+    description: "Um espaço seguro e confidencial para adolescentes e adultos explorarem suas emoções, com foco em regulação emocional, humor e personalidade.",
   },
   {
     icon: Users,
     title: "Terapia de Casal",
     href: "/servicos/terapia-de-casal",
-    description: "Dedicada a casais que buscam melhorar a comunicação, resolver conflitos, reconstruir a confiança e fortalecer o vínculo afetivo para um relacionamento mais saudável.",
+    description: "Dedicada a casais que buscam melhorar a comunicação, resolver conflitos e fortalecer o vínculo afetivo para um relacionamento mais saudável.",
   },
   {
-    icon: Lightbulb,
-    title: "Orientação Profissional",
+    icon: BrainCircuit,
+    title: "Avaliação Neuropsicológica",
     href: "/servicos/orientacao-profissional",
-    description: "Processo focado em ajudar jovens e adultos na escolha ou transição de carreira, alinhando paixões, habilidades e oportunidades de mercado.",
+    description: "Investigação aprofundada das funções cognitivas (memória, atenção, etc.) para auxiliar no diagnóstico e planejamento terapêutico.",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function ServicosPage() {
         <div className="container mx-auto px-4 text-center">
           <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight">Serviços e Abordagem</h1>
           <p data-anime className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Ofereço um cuidado terapêutico personalizado para atender às suas necessidades específicas, com base em uma abordagem empática e cientificamente embasada.
+            Ofereço um cuidado terapêutico online e personalizado para atender às suas necessidades, com base em uma abordagem empática e cientificamente embasada.
           </p>
         </div>
       </section>
@@ -121,10 +121,10 @@ export default function ServicosPage() {
             <div data-anime className="relative h-80 md:h-[450px] flex items-center justify-center">
               <Card className="overflow-hidden shadow-xl rounded-2xl w-full max-w-[400px]">
                 <Image
-                    src="https://placehold.co/600x400.png"
+                    src="https://placehold.co/400x450.png"
                     alt="Espaço terapêutico calmo e acolhedor, simbolizando a abordagem da psicóloga."
-                    width={600}
-                    height={400}
+                    width={400}
+                    height={450}
                     className="object-cover w-full h-full"
                     data-ai-hint="calm therapy room"
                 />
@@ -133,10 +133,10 @@ export default function ServicosPage() {
             <div data-anime>
               <h2 className="text-3xl font-bold mb-4">Minha Abordagem Terapêutica</h2>
               <p className="text-muted-foreground mb-4">
-                Minha prática é fundamentada na Abordagem Humanista, que valoriza a experiência única de cada indivíduo e sua capacidade de encontrar as próprias respostas. Vejo a terapia como uma parceria, onde juntos criamos um caminho de autodescoberta e mudança.
+                Minha prática é fundamentada na Terapia Cognitivo-Comportamental (TCC), uma abordagem focada em resultados e validada cientificamente. Acredito em um processo colaborativo, onde identificamos padrões de pensamento e comportamento para construir estratégias eficazes para a mudança.
               </p>
               <p className="text-muted-foreground">
-                Utilizo também ferramentas da Terapia Cognitivo-Comportamental (TCC) para trabalhar de forma prática em pensamentos e comportamentos que possam estar causando sofrimento, sempre de forma adaptada a você.
+                Meu olhar é sempre humano e acolhedor, respeitando a subjetividade e a história de cada pessoa. Acredito que a aliança terapêutica é a base para a transformação e o desenvolvimento de uma vida com mais sentido e bem-estar.
               </p>
               <div className="interactive-button inline-block">
                 <Button asChild className="mt-6" size="lg">

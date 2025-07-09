@@ -7,19 +7,19 @@ import { Plant1 } from '@/components/ui/Plant1';
 import { Plant2 } from '@/components/ui/Plant2';
 
 export const metadata: Metadata = {
-  title: 'Terapia Individual com Psicóloga Isabela | Acolhimento e Autoconhecimento',
-  description: 'Explore suas emoções em um espaço seguro. A terapia individual com a Psicóloga Isabela ajuda a lidar com ansiedade, estresse e a promover seu crescimento pessoal.',
-  keywords: 'terapia individual, psicóloga, autoconhecimento, ansiedade, estresse, desenvolvimento pessoal',
+  title: 'Terapia Individual Online com Isabela Frotté Mello',
+  description: 'Atendimento para adolescentes e adultos. Especialista em TCC para Transtorno Borderline, Bipolar, regulação emocional, humor e neurodiversidade.',
+  keywords: 'terapia individual, psicóloga TCC, transtorno borderline, transtorno bipolar, neurodiversidade, regulação emocional',
 };
 
 export default function TerapiaIndividualPage() {
   const benefits = [
-    "Gestão de ansiedade e estresse",
-    "Desenvolvimento de autoestima e confiança",
-    "Superação de traumas e bloqueios emocionais",
+    "Melhora na regulação emocional",
+    "Desenvolvimento de estratégias para lidar com instabilidade de humor",
+    "Compreensão e manejo de transtornos (Borderline, Bipolar, etc.)",
+    "Fortalecimento da autoestima e identidade",
     "Melhora nos relacionamentos interpessoais",
-    "Clareza para tomar decisões importantes",
-    "Promoção do bem-estar e equilíbrio emocional",
+    "Acolhimento para questões de neurodiversidade",
   ];
 
   return (
@@ -32,7 +32,7 @@ export default function TerapiaIndividualPage() {
               Terapia Individual
             </h1>
             <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl mt-4">
-              Um espaço confidencial e acolhedor dedicado exclusivamente a você, sua história e sua jornada de autoconhecimento.
+              Um espaço confidencial e acolhedor para adolescentes e adultos, focado no seu desenvolvimento e bem-estar emocional.
             </p>
           </div>
         </section>
@@ -41,9 +41,12 @@ export default function TerapiaIndividualPage() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter">Como a Terapia Individual Pode Ajudar?</h2>
+                <h2 className="text-3xl font-bold tracking-tighter">Cuidado Especializado e Acolhedor</h2>
                 <p className="text-muted-foreground">
-                  A terapia individual é um processo colaborativo entre você e a psicóloga, focado em suas necessidades e objetivos. É uma oportunidade para explorar seus pensamentos, sentimentos e comportamentos em um ambiente seguro, sem julgamentos. Juntos, podemos trabalhar para identificar padrões, desenvolver novas habilidades e encontrar caminhos para uma vida mais plena e satisfatória.
+                  Utilizando a Terapia Cognitivo-Comportamental (TCC), trabalho em colaboração com você para identificar e modificar padrões de pensamento e comportamento que causam sofrimento. Minha experiência inclui o acompanhamento de Transtorno de Personalidade Borderline, Transtorno Afetivo Bipolar e questões relacionadas à neurodiversidade e regulação emocional.
+                </p>
+                <p className="text-muted-foreground">
+                  Juntos, vamos construir um caminho de autoconhecimento, desenvolver novas habilidades e promover uma vida mais equilibrada e satisfatória.
                 </p>
                 <ul className="space-y-3 mt-6">
                   {benefits.map((benefit, index) => (
@@ -58,7 +61,7 @@ export default function TerapiaIndividualPage() {
                  <div className="interactive-card">
                    <Image
                       src="https://placehold.co/600x400.png"
-                      alt="Mulher em sessão de terapia individual, sentindo-se acolhida e segura."
+                      alt="Pessoa em sessão de terapia individual online, sentindo-se compreendida."
                       width={600}
                       height={400}
                       className="relative mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full shadow-xl"

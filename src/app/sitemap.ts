@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { client } from '@/lib/sanity'
  
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://isabelapsicologa.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://isabelafrotte.com';
   
   // Static routes
   const staticRoutes = [
@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/servicos',
     '/servicos/terapia-individual',
     '/servicos/terapia-de-casal',
-    '/servicos/orientacao-profissional',
+    '/servicos/orientacao-profissional', // This URL slug now points to Avaliação Neuropsicológica
     '/blog',
     '/contato',
   ].map((route) => ({

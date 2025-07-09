@@ -53,10 +53,10 @@ export default function SobreClient() {
   }, []);
 
   const valores = [
-    { text: "Empatia e Acolhimento" },
-    { text: "Ética e Confidencialidade" },
-    { text: "Compromisso com seu Desenvolvimento" },
-    { text: "Abordagem Inclusiva e Respeitosa" },
+    { text: "Atendimento humano e transformador" },
+    { text: "Ética e confidencialidade" },
+    { text: "Respeito ao tempo de cada pessoa" },
+    { text: "Acolhimento de necessidades emocionais" },
   ];
 
   return (
@@ -67,19 +67,15 @@ export default function SobreClient() {
       <Plant1 className="absolute -bottom-24 -right-24 w-96 h-96 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
       <Plant3 className="absolute top-1/2 -left-36 w-96 h-96 text-primary/10 opacity-70 -z-10 transform -rotate-45" />
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         
         <div className="md:col-span-5 lg:col-span-5 relative" data-anime>
           <Plant2 className="absolute -top-16 -left-16 w-64 h-64 text-accent/30 opacity-70 -z-20 transform -rotate-45" />
-          <div 
-            className="absolute top-[-1rem] left-[-1rem] md:top-[-2rem] md:left-[-2rem] w-full h-full bg-accent/20 rounded-2xl -z-10"
-            style={{ animation: 'float 8s ease-in-out infinite' }}
-          />
           <div className="transition-transform duration-300 hover:scale-105">
             <Card className="overflow-hidden shadow-xl rounded-2xl">
               <Image
                 src="https://placehold.co/600x700.png"
-                alt="Foto profissional da Psicóloga Isabela em seu consultório."
+                alt="Foto profissional da Psicóloga Isabela Frotté Mello."
                 width={600}
                 height={700}
                 className="object-cover w-full h-full"
@@ -90,25 +86,29 @@ export default function SobreClient() {
         </div>
 
         <div className="md:col-span-7 lg:col-span-7" data-anime>
-          <Badge variant="secondary" className="mb-4">Minha Trajetória</Badge>
+          <Badge variant="secondary" className="mb-4">CRP 05/77920</Badge>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
-            Dedicada a guiar sua jornada de autoconhecimento
+            Isabela Frotté Mello
           </h1>
           <p className="text-lg text-muted-foreground mb-6">
-            Acredito que cada pessoa possui uma capacidade inata de crescimento e transformação. Meu papel como psicóloga é oferecer um ambiente seguro, empático e livre de julgamentos, onde você possa explorar suas questões mais profundas, desenvolver novas perspectivas e construir uma vida mais autêntica e satisfatória.
+            Sou psicóloga com atuação clínica voltada para adolescentes, adultos e casais. Tenho formação em Terapia Cognitivo-Comportamental (TCC) e sou pós-graduanda em Neuropsicologia.
           </p>
           
           <div className="space-y-4 text-muted-foreground">
+            <h3 className="text-2xl font-bold text-foreground">Trajetória e Experiência</h3>
             <p>
-              Minha formação em Psicologia pela Universidade de São Paulo (USP) me proporcionou uma base sólida, mas foi na prática clínica e no contato humano que encontrei minha verdadeira vocação. Minha abordagem é integrativa, combinando técnicas da Terapia Cognitivo-Comportamental com a sensibilidade da psicologia humanista para oferecer um cuidado completo e personalizado.
+              Ao longo da minha trajetória, desenvolvi experiência no acompanhamento de pessoas com Transtorno de Personalidade Borderline, Transtorno Afetivo Bipolar e outros transtornos relacionados a personalidade, humor, a neurodiversidade e à regulação emocional.
             </p>
             <p>
-              Estou em constante atualização, participando de cursos e congressos para trazer as práticas mais eficazes e atuais para o consultório.
+              Essas vivências me aprofundaram no cuidado com histórias complexas, subjetividades intensas e relações desafiadoras, sempre com um olhar acolhedor e fundamentado nos teóricos.
             </p>
           </div>
 
           <div className="mt-8">
-            <h3 className="text-2xl font-bold mb-4">Meus Valores</h3>
+            <h3 className="text-2xl font-bold mb-4">Meu Compromisso Como Psicóloga</h3>
+             <p className="text-muted-foreground mb-6">
+              Acredito em um atendimento humano, ético e transformador, que respeita o tempo de cada pessoa e acolhe suas necessidades emocionais com sensibilidade. Meu espaço terapêutico é aberto a pessoas que queiram se compreender melhor, enfrentar suas dores e construir novas possibilidades para sua vida.
+            </p>
             <ul className="space-y-3">
               {valores.map((valor, index) => (
                 <li key={index} className="flex items-center" data-anime-item>
@@ -122,13 +122,6 @@ export default function SobreClient() {
           </div>
         </div>
       </div>
-      <style jsx>{`
-        @keyframes float {
-          0% { transform: rotate(0deg); }
-          50% { transform: rotate(-3deg); }
-          100% { transform: rotate(0deg); }
-        }
-      `}</style>
     </div>
   );
 }

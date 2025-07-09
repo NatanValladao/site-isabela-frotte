@@ -7,19 +7,19 @@ import { Plant2 } from '@/components/ui/Plant2';
 import { Plant3 } from '@/components/ui/Plant3';
 
 export const metadata: Metadata = {
-  title: 'Orientação Profissional com Psicóloga Isabela | Encontre sua Carreira',
-  description: 'Encontre clareza e direção para sua vida profissional. A orientação vocacional e de carreira ajuda a alinhar suas paixões e habilidades com o mercado.',
-  keywords: 'orientação profissional, orientação vocacional, carreira, transição de carreira, psicóloga',
+  title: 'Avaliação Neuropsicológica com Isabela Frotté Mello',
+  description: 'Compreenda o funcionamento cognitivo. A avaliação neuropsicológica investiga memória, atenção e outras funções para auxiliar no diagnóstico e tratamento.',
+  keywords: 'avaliação neuropsicológica, neuropsicologia, diagnóstico, TDAH, funções cognitivas, psicóloga',
 };
 
-export default function OrientacaoProfissionalPage() {
+export default function AvaliacaoNeuropsicologicaPage() {
   const benefits = [
-    "Identificação de interesses, habilidades e valores",
-    "Exploração de diferentes áreas e profissões",
-    "Planejamento de carreira e metas profissionais",
-    "Apoio em momentos de transição de carreira",
-    "Desenvolvimento de um plano de ação concreto",
-    "Mais segurança e confiança em suas escolhas",
+    "Mapeamento de funções cognitivas (memória, atenção, etc.)",
+    "Auxílio no diagnóstico diferencial de transtornos (ex: TDAH)",
+    "Identificação de pontos fortes e fracos do perfil cognitivo",
+    "Planejamento de intervenções e reabilitação",
+    "Compreensão do impacto de condições neurológicas",
+    "Laudo detalhado para fins clínicos e educacionais",
   ];
 
   return (
@@ -29,10 +29,10 @@ export default function OrientacaoProfissionalPage() {
           <Plant2 className="absolute -bottom-24 -left-24 w-80 h-80 text-accent/50 opacity-20 -z-10" />
           <div className="container px-4 md:px-6 text-center">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-              Orientação Profissional
+              Avaliação Neuropsicológica
             </h1>
             <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl mt-4">
-              Encontre o caminho que alinha sua paixão ao seu propósito profissional com clareza e confiança.
+              Uma investigação aprofundada das suas funções cognitivas para maior clareza diagnóstica e terapêutica.
             </p>
           </div>
         </section>
@@ -41,9 +41,12 @@ export default function OrientacaoProfissionalPage() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter">Planejando seu Futuro Profissional</h2>
+                <h2 className="text-3xl font-bold tracking-tighter">O que é a Avaliação Neuropsicológica?</h2>
                 <p className="text-muted-foreground">
-                  Seja você um jovem em busca da primeira profissão ou um adulto considerando uma transição de carreira, a orientação profissional é um processo estruturado de autoconhecimento e pesquisa. Utilizando ferramentas e técnicas da psicologia, vamos explorar suas aptidões e interesses para que você possa tomar decisões mais conscientes e alinhadas com quem você é e onde quer chegar.
+                  Como pós-graduanda em Neuropsicologia, ofereço um processo de avaliação detalhado que utiliza testes e instrumentos padronizados para investigar o funcionamento do cérebro e suas funções, como memória, atenção, linguagem e funções executivas.
+                </p>
+                <p className="text-muted-foreground">
+                  Este processo é fundamental para auxiliar no diagnóstico de transtornos do neurodesenvolvimento (como TDAH), dificuldades de aprendizagem e para entender o impacto de condições neurológicas. O resultado é um laudo completo que guia o planejamento de intervenções eficazes.
                 </p>
                 <ul className="space-y-3 mt-6">
                   {benefits.map((benefit, index) => (
@@ -58,11 +61,11 @@ export default function OrientacaoProfissionalPage() {
                  <div className="interactive-card">
                    <Image
                       src="https://placehold.co/600x400.png"
-                      alt="Pessoa planejando sua carreira em um ambiente inspirador e organizado."
+                      alt="Ilustração de um cérebro com conexões, representando as funções cognitivas."
                       width={600}
                       height={400}
                       className="relative mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full shadow-xl"
-                      data-ai-hint="career planning"
+                      data-ai-hint="brain connections"
                     />
                   </div>
               </div>
@@ -74,15 +77,15 @@ export default function OrientacaoProfissionalPage() {
             <Plant3 className="absolute -top-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Pronto para Construir sua Carreira?</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Pronto para Obter Respostas?</h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Sua satisfação profissional é fundamental para uma vida equilibrada. Vamos conversar sobre seus próximos passos.
+                A avaliação neuropsicológica pode ser o primeiro passo para um plano de tratamento mais eficaz.
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm space-y-2 interactive-button">
                <Button asChild size="lg" className="font-semibold w-full">
                   <Link href="/contato">
-                    Comece sua Orientação Profissional
+                    Agende sua Avaliação
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

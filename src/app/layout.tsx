@@ -8,26 +8,26 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://isabelapsicologa.co
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Psicóloga Isabela - Terapia e Acolhimento em São Paulo',
-    template: '%s | Psicóloga Isabela',
+    default: 'Isabela Frotté Mello - Psicóloga (CRP 05/77920)',
+    template: '%s | Isabela Frotté Mello - Psicóloga',
   },
-  description: 'Espaço de terapia e acolhimento com a Psicóloga Isabela em São Paulo. Encontre apoio para sua jornada de autoconhecimento, bem-estar, ansiedade e depressão.',
-  keywords: 'psicóloga, terapia, psicologia, autoconhecimento, ansiedade, depressão, bem-estar, são paulo, terapia de casal, orientação profissional',
-  authors: [{ name: 'Psicóloga Isabela' }],
-  creator: 'Psicóloga Isabela',
+  description: 'Psicóloga Isabela Frotté Mello (CRP 05/77920). Atendimento online para adolescentes, adultos e casais. Especialista em TCC, Neuropsicologia, Transtorno Borderline e Bipolar.',
+  keywords: 'psicóloga, psicologia, terapia online, TCC, neuropsicologia, transtorno de personalidade borderline, transtorno afetivo bipolar, isabela frotté mello',
+  authors: [{ name: 'Isabela Frotté Mello' }],
+  creator: 'Isabela Frotté Mello',
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
     url: siteUrl,
-    title: 'Psicóloga Isabela - Terapia e Acolhimento em São Paulo',
-    description: 'Encontre apoio para sua jornada de autoconhecimento, bem-estar, ansiedade e depressão.',
-    siteName: 'Psicóloga Isabela',
+    title: 'Isabela Frotté Mello - Psicóloga (CRP 05/77920)',
+    description: 'Atendimento online para adolescentes, adultos e casais. Terapia Cognitivo-Comportamental e Neuropsicologia.',
+    siteName: 'Isabela Frotté Mello | Psicóloga',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Psicóloga Isabela - Terapia e Acolhimento em São Paulo',
+    title: 'Isabela Frotté Mello - Psicóloga (CRP 05/77920)',
     description: 'Encontre apoio para sua jornada de autoconhecimento, bem-estar, ansiedade e depressão.',
-    creator: '@isabelapsicologa', // placeholder
+    creator: '@isabelafrottepsico', // placeholder
   },
 };
 
@@ -38,26 +38,18 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'MedicalBusiness',
-    name: 'Psicóloga Isabela',
+    '@type': 'Psychologist',
+    name: 'Isabela Frotté Mello',
     image: `${siteUrl}/og-image.png`, // placeholder
     '@id': siteUrl,
     url: siteUrl,
-    telephone: '+55-11-99999-9999',
+    telephone: '+5521999999999', // placeholder
     priceRange: '$$',
     address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Rua Fictícia, 123',
-      addressLocality: 'São Paulo',
-      addressRegion: 'SP',
-      postalCode: '01000-000',
-      addressCountry: 'BR',
+        '@type': 'PostalAddress',
+        addressCountry: 'BR',
     },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: -23.55052,
-      longitude: -46.633308,
-    },
+    description: 'Psicóloga (CRP 05/77920) com atuação clínica online voltada para adolescentes, adultos e casais. Formação em Terapia Cognitivo-Comportamental (TCC) e pós-graduanda em Neuropsicologia.',
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -65,8 +57,8 @@ export default function RootLayout({
       closes: '19:00',
     },
     sameAs: [
-      'https://www.instagram.com/isabelapsicologa', // placeholder
-      'https://www.linkedin.com/in/isabelapsicologa', // placeholder
+      'https://www.instagram.com/isabelafrottepsico', // placeholder
+      'https://www.linkedin.com/in/isabelafrottemello', // placeholder
     ],
   };
   

@@ -13,7 +13,7 @@ const Footer = () => {
     { href: "/servicos", label: "Visão Geral" },
     { href: "/servicos/terapia-individual", label: "Terapia Individual" },
     { href: "/servicos/terapia-de-casal", label: "Terapia de Casal" },
-    { href: "/servicos/orientacao-profissional", label: "Orientação Profissional" },
+    { href: "/servicos/orientacao-profissional", label: "Avaliação Neuropsicológica" },
   ];
 
   return (
@@ -21,9 +21,9 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
-            <h2 className="text-2xl font-headline font-bold">Psicóloga Isabela</h2>
+            <h2 className="text-2xl font-headline font-bold">Isabela Frotté Mello</h2>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              Um espaço de acolhimento e transformação para sua saúde mental.
+              Psicóloga (CRP 05/77920). Um espaço de acolhimento e transformação para sua saúde mental.
             </p>
             <div className="mt-6 flex gap-4">
               <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
@@ -68,15 +68,15 @@ const Footer = () => {
               <p className="font-headline font-semibold">Contato</p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li>
-                  <a href="mailto:contato@isabelapsicologa.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                  <a href="mailto:contato@isabelafrotte.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
                     <Mail size={16} />
-                    <span>contato@isabelapsicologa.com</span>
+                    <span>contato@isabelafrotte.com</span>
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+5511999999999" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                  <a href="tel:+5521999999999" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
                     <Phone size={16} />
-                    <span>(11) 99999-9999</span>
+                    <span>(21) 99999-9999</span>
                   </a>
                 </li>
               </ul>
@@ -85,7 +85,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 border-t border-border pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Psicóloga Isabela. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Isabela Frotté Mello. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

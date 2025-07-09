@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { Plant1 } from "@/components/ui/Plant1";
 import { Plant2 } from "@/components/ui/Plant2";
 import { Plant3 } from "@/components/ui/Plant3";
@@ -56,7 +56,7 @@ export default function ContatoClient() {
         <div className="container mx-auto px-4 text-center">
           <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight">Entre em Contato</h1>
           <p data-anime className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Estou aqui para ouvir você. Utilize as informações abaixo ou preencha o formulário para agendar uma conversa inicial.
+            Estou aqui para ouvir você. Utilize as informações abaixo ou preencha o formulário para agendar uma conversa inicial. Atendimentos online para o mundo todo.
           </p>
         </div>
       </section>
@@ -74,10 +74,10 @@ export default function ContatoClient() {
             <div className="md:col-span-5" data-anime>
               <h2 className="text-3xl font-bold mb-6">Informações de Contato</h2>
               <div className="space-y-6">
+                <p className="font-semibold text-muted-foreground">Isabela Frotté Mello | Psicóloga CRP 05/77920</p>
                 {[
-                  { icon: Mail, title: "Email", desc: "Envie sua mensagem a qualquer hora.", link: "mailto:contato@isabelapsicologa.com", text: "contato@isabelapsicologa.com" },
-                  { icon: Phone, title: "Telefone", desc: "Para contato via WhatsApp ou ligação.", link: "tel:+5511999999999", text: "(11) 99999-9999" },
-                  { icon: MapPin, title: "Localização", desc: "Atendimento presencial e online.", text: "Rua Fictícia, 123 - São Paulo, SP", isLink: false }
+                  { icon: Mail, title: "Email", desc: "Envie sua mensagem a qualquer hora.", link: "mailto:contato@isabelafrotte.com", text: "contato@isabelafrotte.com" },
+                  { icon: Phone, title: "Telefone", desc: "Para contato via WhatsApp.", link: "tel:+5521999999999", text: "(21) 99999-9999" },
                 ].map((info, index) => (
                   <div 
                     key={index} 
@@ -93,13 +93,9 @@ export default function ContatoClient() {
                     <div>
                       <h3 className="text-xl font-semibold">{info.title}</h3>
                       <p className="text-muted-foreground">{info.desc}</p>
-                      {info.isLink !== false ? (
-                         <a href={info.link} className="text-primary hover:underline font-medium">
-                          {info.text}
-                        </a>
-                      ) : (
-                        <p className="font-medium text-primary">{info.text}</p>
-                      )}
+                      <a href={info.link} className="text-primary hover:underline font-medium">
+                        {info.text}
+                      </a>
                     </div>
                   </div>
                 ))}

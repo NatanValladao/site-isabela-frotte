@@ -7,7 +7,7 @@ const Header = () => {
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="font-headline text-2xl font-bold">Psicóloga Isabela</span>
+          <span className="font-headline text-xl font-bold">Isabela Frotté Mello</span>
         </Link>
         
         <div className="hidden md:block">
