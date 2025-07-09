@@ -3,7 +3,7 @@ import './globals.css';
 import ClientLayoutWrapper from '@/components/layout/ClientLayoutWrapper';
 import { Toaster } from '@/components/ui/toaster';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://isabelapsicologa.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://isabelafrotte.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -73,7 +73,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased overflow-x-hidden">
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
         <Toaster />
       </body>
