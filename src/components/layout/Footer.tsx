@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
+import { WhatsappIcon } from "../ui/WhatsappIcon";
 
 const Footer = () => {
   const navLinks = [
@@ -15,6 +16,10 @@ const Footer = () => {
     { href: "/servicos/terapia-de-casal", label: "Terapia de Casal" },
     { href: "/servicos/orientacao-profissional", label: "Avaliação Neuropsicológica" },
   ];
+  
+  const phoneNumber = "5521999999999";
+  const message = "Olá, gostaria de agendar uma conversa.";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
     <footer className="bg-secondary/40 text-foreground">
@@ -66,17 +71,16 @@ const Footer = () => {
 
             <div>
               <p className="font-headline font-semibold">Contato</p>
-              <ul className="mt-4 space-y-2 text-sm">
-                <li>
-                  <a href="mailto:contato@isabelafrotte.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                    <Mail size={16} />
-                    <span>contato@isabelafrotte.com</span>
+              <ul className="mt-4 space-y-3 text-sm">
+                 <li>
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
+                    <WhatsappIcon className="h-4 w-4" />
+                    <span>(21) 99999-9999</span>
                   </a>
                 </li>
                 <li>
-                  <a href="tel:+5521999999999" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-                    <Phone size={16} />
-                    <span>(21) 99999-9999</span>
+                  <a href="mailto:contato@isabelafrotte.com" className="text-muted-foreground hover:text-primary transition-colors break-all">
+                    contato@isabelafrotte.com
                   </a>
                 </li>
               </ul>

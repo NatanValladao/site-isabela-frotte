@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
+import WhatsappButton from '@/components/layout/WhatsappButton';
 
 export default function ClientLayoutWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -31,6 +32,7 @@ export default function ClientLayoutWrapper({ children }: { children: React.Reac
           {children}
         </main>
         <Footer />
+        <WhatsappButton />
       </div>
     </>
   );

@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { Plant1 } from '@/components/ui/Plant1';
 import { Plant3 } from '@/components/ui/Plant3';
+import { WhatsappIcon } from '@/components/ui/WhatsappIcon';
 
 export const metadata: Metadata = {
   title: 'Terapia de Casal Online com Isabela Frotté Mello',
@@ -83,12 +84,16 @@ export default function TerapiaDeCasalPage() {
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm space-y-2 interactive-button">
-               <Button asChild size="lg" className="font-semibold w-full">
-                  <Link href="/contato">
-                    Fale com a Psicóloga Isabela
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+              <Button asChild size="lg" className="font-semibold w-full bg-[#25D366] hover:bg-[#128C7E] text-white">
+                <Link 
+                  href={`https://wa.me/5521999999999?text=${encodeURIComponent("Olá, gostaria de saber mais sobre a terapia de casal.")}`} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <WhatsappIcon className="mr-2" />
+                  Agende via WhatsApp
+                </Link>
+              </Button>
             </div>
           </div>
         </section>

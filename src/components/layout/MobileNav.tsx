@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { WhatsappIcon } from '../ui/WhatsappIcon';
 
 const navLinks = [
   { href: '/', label: 'Início' },
@@ -15,6 +16,10 @@ const navLinks = [
   { href: '/blog', label: 'Blog' },
   { href: '/contato', label: 'Contato' },
 ];
+
+const phoneNumber = "5521999999999";
+const message = "Olá, gostaria de agendar uma conversa.";
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,36 +33,42 @@ const MobileNav = () => {
           <span className="sr-only">Abrir menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-        <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between border-b pb-4">
-            <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-              <span className="font-headline text-lg font-bold">Isabela Frotté Mello</span>
+      <SheetContent side="left" className="w-[300px] sm:w-[400px] flex flex-col p-0">
+        <div className="p-6 flex items-center justify-between border-b">
+          <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+            <span className="font-headline text-lg font-bold">Isabela Frotté Mello</span>
+          </Link>
+          <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                  <X className="h-6 w-6" />
+                  <span className="sr-only">Fechar menu</span>
+              </Button>
+          </SheetTrigger>
+        </div>
+        <nav className="mt-8 flex-1 flex-col space-y-2 px-6">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className={cn(
+                'text-lg font-medium p-3 rounded-md transition-colors block',
+                pathname === link.href
+                  ? 'bg-accent/80 text-accent-foreground'
+                  : 'text-muted-foreground hover:bg-accent/40 hover:text-foreground'
+              )}
+            >
+              {link.label}
             </Link>
-            <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                    <X className="h-6 w-6" />
-                    <span className="sr-only">Fechar menu</span>
-                </Button>
-            </SheetTrigger>
-          </div>
-          <nav className="mt-8 flex flex-col space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  'text-lg font-medium p-3 rounded-md transition-colors',
-                  pathname === link.href
-                    ? 'bg-accent/80 text-accent-foreground'
-                    : 'text-muted-foreground hover:bg-accent/40 hover:text-foreground'
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          ))}
+        </nav>
+        <div className="mt-auto p-6 border-t">
+          <Button asChild size="lg" className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold">
+            <Link href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+              <WhatsappIcon className="mr-2 h-5 w-5"/>
+              Fale no WhatsApp
+            </Link>
+          </Button>
         </div>
       </SheetContent>
     </Sheet>

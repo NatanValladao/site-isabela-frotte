@@ -2,21 +2,54 @@
 
 import { useEffect, useRef } from 'react';
 import anime from 'animejs';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone } from "lucide-react";
-import { Plant1 } from "@/components/ui/Plant1";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { WhatsappIcon } from '@/components/ui/WhatsappIcon';
 import { Plant2 } from "@/components/ui/Plant2";
 import { Plant3 } from "@/components/ui/Plant3";
-import { Draggable } from '@/components/ui/Draggable';
+import { toast } from '@/hooks/use-toast';
+
+const phoneNumber = "5521999999999";
+
+const formSchema = z.object({
+  nome: z.string().min(2, { message: "Por favor, insira seu nome." }),
+  mensagem: z.string().min(10, { message: "Sua mensagem precisa ter pelo menos 10 caracteres." }),
+});
 
 export default function ContatoClient() {
-  const headerRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLElement>(null);
+  const pageRef = useRef<HTMLDivElement>(null);
+  
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      nome: "",
+      mensagem: "",
+    },
+  });
 
-  const animateOnScroll = (element: HTMLElement | null, stagger = 150) => {
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    const template = `*${values.nome.trim()}*: ${values.mensagem.trim()}`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(template)}`;
+    
+    try {
+      window.open(whatsappUrl, '_blank');
+      form.reset();
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Erro ao abrir o WhatsApp",
+        description: "Não foi possível abrir o WhatsApp. Por favor, tente novamente.",
+      });
+    }
+  }
+
+  useEffect(() => {
+    const element = pageRef.current;
     if (!element) return;
     const elementsToAnimate = Array.from(element.querySelectorAll("[data-anime]"));
     
@@ -28,7 +61,7 @@ export default function ContatoClient() {
               targets: elementsToAnimate,
               translateY: [20, 0],
               opacity: [0, 1],
-              delay: anime.stagger(stagger),
+              delay: anime.stagger(150),
               duration: 800,
               easing: 'easeOutExpo',
             });
@@ -40,99 +73,74 @@ export default function ContatoClient() {
     );
     observer.observe(element);
     return () => observer.disconnect();
-  };
-  
-  useEffect(() => {
-    animateOnScroll(headerRef.current, 100);
-    animateOnScroll(contentRef.current, 100);
   }, []);
 
   return (
-    <>
+    <div ref={pageRef}>
       <section 
-        ref={headerRef}
         className="py-16 md:py-24 bg-secondary/20"
       >
         <div className="container mx-auto px-4 text-center">
           <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight">Entre em Contato</h1>
           <p data-anime className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Estou aqui para ouvir você. Utilize as informações abaixo ou preencha o formulário para agendar uma conversa inicial. Atendimentos online para o mundo todo.
+            A forma mais rápida de falar comigo é pelo WhatsApp. Envie uma mensagem ou, se preferir, utilize o formulário abaixo.
           </p>
         </div>
       </section>
 
       <section 
-        ref={contentRef}
         className="py-16 md:py-24 relative overflow-hidden"
       >
         <div className="container mx-auto px-4 relative">
           <Plant2 className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
           <Plant3 className="absolute -top-24 -left-24 w-72 h-72 text-accent/50 opacity-50 -z-10" />
-          <Plant1 className="absolute bottom-1/4 -right-36 w-80 h-80 text-primary/10 opacity-40 -z-10 transform rotate-45" />
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
-            <div className="md:col-span-5" data-anime>
-              <h2 className="text-3xl font-bold mb-6">Informações de Contato</h2>
-              <div className="space-y-6">
-                <p className="font-semibold text-muted-foreground">Isabela Frotté Mello | Psicóloga CRP 05/77920</p>
-                {[
-                  { icon: Mail, title: "Email", desc: "Envie sua mensagem a qualquer hora.", link: "mailto:contato@isabelafrotte.com", text: "contato@isabelafrotte.com" },
-                  { icon: Phone, title: "Telefone", desc: "Para contato via WhatsApp.", link: "tel:+5521999999999", text: "(21) 99999-9999" },
-                ].map((info, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-center gap-4"
-                  >
-                    <Draggable>
-                      <div 
-                        className="p-3 bg-accent/20 rounded-full"
-                      >
-                        <info.icon className="w-6 h-6 text-primary" />
-                      </div>
-                    </Draggable>
-                    <div>
-                      <h3 className="text-xl font-semibold">{info.title}</h3>
-                      <p className="text-muted-foreground">{info.desc}</p>
-                      <a href={info.link} className="text-primary hover:underline font-medium">
-                        {info.text}
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="md:col-span-7 bg-card/60 p-8 rounded-2xl shadow-lg border" data-anime>
-              <h2 className="text-3xl font-bold mb-6">Envie uma Mensagem</h2>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Nome</Label>
-                    <Input id="name" placeholder="Seu nome completo" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="seu@email.com" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Assunto</Label>
-                  <Input id="subject" placeholder="Ex: Agendamento de consulta" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Sua Mensagem</Label>
-                  <Textarea id="message" placeholder="Escreva sua mensagem aqui..." rows={5} />
-                </div>
+          <div className="max-w-2xl mx-auto bg-card/60 p-8 rounded-2xl shadow-lg border" data-anime>
+            <h2 className="text-3xl font-bold mb-2 text-center">Formulário para WhatsApp</h2>
+            <p className="text-muted-foreground text-center mb-6">Sua mensagem será enviada diretamente para o meu WhatsApp.</p>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="nome"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Seu Nome</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Seu nome completo" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="mensagem"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Sua Mensagem</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Olá, gostaria de saber mais sobre..."
+                          rows={5}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 <div className="interactive-button">
-                  <Button type="submit" size="lg" className="w-full font-semibold">
-                    Enviar Mensagem
+                  <Button type="submit" size="lg" className="w-full font-semibold bg-[#25D366] hover:bg-[#128C7E] text-white">
+                    <WhatsappIcon className="mr-2 h-5 w-5" />
+                    Enviar via WhatsApp
                   </Button>
                 </div>
               </form>
-            </div>
+            </Form>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
