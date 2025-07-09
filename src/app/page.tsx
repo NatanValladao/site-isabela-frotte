@@ -98,7 +98,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section ref={servicesRef} id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20">
+        <section ref={servicesRef} id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20 relative overflow-hidden">
           <div className="container px-4 md:px-6 relative">
             <Plant3 className="absolute -bottom-20 -right-20 w-80 h-80 text-secondary/70 opacity-30 -z-10" />
             <Plant1 className="absolute -top-24 -left-20 w-80 h-80 text-accent/50 opacity-10 -z-10" />
@@ -140,7 +140,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section ref={ctaRef} className="w-full py-12 md:py-24 lg:py-32">
+        <section ref={ctaRef} className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6" data-anime>
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Pronto para dar o primeiro passo?</h2>
