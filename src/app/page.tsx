@@ -54,14 +54,14 @@ export default function Home() {
       <main className="flex-1">
         <section ref={heroRef} className="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden">
           <Plant1 className="absolute -top-32 -left-32 w-96 h-96 text-secondary/70 opacity-20 -z-10" />
-          <Plant2 className="absolute bottom-0 -right-64 w-[32rem] h-[32rem] text-accent/70 opacity-20 -z-10 transform -rotate-12" />
+          <Plant2 className="absolute -bottom-48 -right-32 w-[28rem] h-[28rem] text-accent/20 opacity-80 -z-10 transform -rotate-12" />
           <Plant3 className="absolute -bottom-32 left-1/4 w-80 h-80 text-primary/10 opacity-60 -z-10 transform" />
           
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4" data-anime>
                 <div className="space-y-4">
-                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-accent">
                     Cuidado psicológico ético e transformador
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
@@ -101,12 +101,12 @@ export default function Home() {
         <section ref={servicesRef} id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20 relative overflow-hidden">
           <div className="container px-4 md:px-6 relative">
             <Plant3 className="absolute -bottom-20 -right-20 w-80 h-80 text-secondary/70 opacity-30 -z-10" />
-            <Plant1 className="absolute -top-24 -left-20 w-80 h-80 text-accent/50 opacity-10 -z-10" />
+            <Plant1 className="absolute -top-24 -left-20 w-80 h-80 text-accent/10 opacity-50 -z-10" />
 
             <div className="flex flex-col items-center justify-center space-y-4 text-center" data-anime>
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-accent/20 px-3 py-1 text-sm text-accent-foreground font-medium">Minhas Especialidades</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Um caminho para cada necessidade</h2>
+                <div className="inline-block rounded-lg bg-primary/20 px-3 py-1 text-sm text-primary-foreground font-medium">Minhas Especialidades</div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-accent">Um caminho para cada necessidade</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Ofereço diferentes modalidades de atendimento para se adaptar à sua busca por bem-estar e autoconhecimento.
                 </p>
@@ -120,14 +120,14 @@ export default function Home() {
               ].map((service) => (
                 <div key={service.title} data-anime>
                    <Link href={service.href} className="block h-full">
-                     <Card className="interactive-card bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 flex flex-col items-center text-center p-6 rounded-2xl h-full">
+                     <Card className="interactive-card bg-background/30 backdrop-blur-sm border border-primary/20 hover:border-primary/50 hover:bg-background/50 flex flex-col items-center text-center p-6 rounded-2xl h-full">
                        <CardHeader className="p-0 items-center">
                          <Draggable>
                            <div className="p-4 bg-background rounded-full mb-4 inline-block">
                              <service.icon className="w-8 h-8 text-primary" />
                            </div>
                          </Draggable>
-                         <CardTitle>{service.title}</CardTitle>
+                         <CardTitle className="text-accent">{service.title}</CardTitle>
                        </CardHeader>
                        <CardContent className="flex-grow mt-2">
                          <p className="text-muted-foreground">{service.description}</p>
@@ -143,7 +143,7 @@ export default function Home() {
         <section ref={ctaRef} className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6" data-anime>
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Pronto para dar o primeiro passo?</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-accent">Pronto para dar o primeiro passo?</h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Sua jornada de transformação começa com uma conversa. Entre em contato para agendar sua primeira sessão online.
               </p>

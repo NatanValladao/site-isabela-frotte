@@ -27,9 +27,9 @@ export default function TerapiaDeCasalPage() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         <section className="relative w-full py-20 md:py-28 bg-secondary/20 overflow-hidden">
-          <Plant3 className="absolute -bottom-24 -left-24 w-80 h-80 text-accent/50 opacity-20 -z-10" />
+          <Plant3 className="absolute -bottom-24 -left-24 w-80 h-80 text-primary/50 opacity-20 -z-10" />
           <div className="container px-4 md:px-6 text-center">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-accent">
               Terapia de Casal
             </h1>
             <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl mt-4">
@@ -54,7 +54,7 @@ export default function TerapiaDeCasalPage() {
                     </div>
                 </div>
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter">Fortalecendo a Conexão a Dois</h2>
+                <h2 className="text-3xl font-bold tracking-tighter text-accent">Fortalecendo a Conexão a Dois</h2>
                 <p className="text-muted-foreground">
                   Todo relacionamento passa por desafios. A terapia de casal oferece um ambiente neutro e seguro, com a mediação de uma profissional, para que vocês possam dialogar, expressar sentimentos e necessidades de forma clara e respeitosa. Com base na Terapia Cognitivo-Comportamental, trabalhamos para identificar e ajustar padrões que geram conflito.
                 </p>
@@ -64,7 +64,7 @@ export default function TerapiaDeCasalPage() {
                 <ul className="space-y-3 mt-6">
                   {benefits.map((benefit, index) => (
                     <li key={index} className="flex items-center">
-                      <Check className="h-5 w-5 mr-3 text-accent-foreground bg-accent p-1 rounded-full" />
+                      <Check className="h-5 w-5 mr-3 text-primary-foreground bg-primary p-1 rounded-full" />
                       <span className="font-medium">{benefit}</span>
                     </li>
                   ))}
@@ -78,7 +78,7 @@ export default function TerapiaDeCasalPage() {
             <Plant1 className="absolute -top-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Prontos para Reconstruir a Harmonia?</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-accent">Prontos para Reconstruir a Harmonia?</h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Investir no seu relacionamento é investir na felicidade de ambos. Agendem uma conversa online para começarmos.
               </p>

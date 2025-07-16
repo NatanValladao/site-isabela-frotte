@@ -55,7 +55,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
         className="py-16 md:py-24 bg-secondary/20"
       >
         <div className="container mx-auto px-4 text-center">
-          <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight">Blog</h1>
+          <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight text-accent">Blog</h1>
           <p data-anime className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Reflexões, dicas e informações sobre psicologia e bem-estar para apoiar sua jornada.
           </p>
@@ -66,7 +66,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
         ref={postsRef}
         className="py-16 md:py-24 relative overflow-hidden"
       >
-        <Plant1 className="absolute -top-24 -left-24 w-96 h-96 text-accent/50 opacity-20 -z-10" />
+        <Plant1 className="absolute -top-24 -left-24 w-96 h-96 text-primary/50 opacity-20 -z-10" />
         <Plant3 className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
         <Plant2 className="absolute top-1/2 -right-48 w-96 h-96 text-primary/10 opacity-50 -z-10" />
 
@@ -74,7 +74,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
               <div key={post._id} data-anime>
-                <Card className="interactive-card flex flex-col overflow-hidden group bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 rounded-2xl h-full">
+                <Card className="interactive-card flex flex-col overflow-hidden group bg-background/30 backdrop-blur-sm border border-primary/20 hover:border-primary/50 hover:bg-background/50 rounded-2xl h-full">
                   <div className="overflow-hidden rounded-t-2xl">
                     <Link href={`/blog/${post.slug?.current}`} className="block">
                       <div className="transition-transform duration-500 group-hover:scale-105">
@@ -97,13 +97,13 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
                   </div>
                   <CardHeader>
                     <Badge variant="outline" className="w-fit mb-2 bg-background">{post.category || 'Artigo'}</Badge>
-                    <CardTitle className="text-xl">{post.title}</CardTitle>
+                    <CardTitle className="text-xl text-accent">{post.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <CardDescription>{post.excerpt}</CardDescription>
                   </CardContent>
                   <CardFooter>
-                    <Link href={`/blog/${post.slug?.current}`} className="font-semibold text-primary flex items-center group-hover:text-accent-foreground">
+                    <Link href={`/blog/${post.slug?.current}`} className="font-semibold text-primary flex items-center group-hover:text-primary-foreground">
                       Ler mais <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </CardFooter>

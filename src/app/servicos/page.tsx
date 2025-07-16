@@ -74,9 +74,9 @@ export default function ServicosPage() {
   return (
     <>
       <section ref={headerRef} className="py-16 md:py-24 bg-secondary/20 relative overflow-hidden">
-        <Plant1 className="absolute top-0 -left-24 w-72 h-72 text-accent/30 opacity-30 -z-10" />
+        <Plant1 className="absolute top-0 -left-24 w-72 h-72 text-primary/30 opacity-30 -z-10" />
         <div className="container mx-auto px-4 text-center">
-          <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight">Serviços e Abordagem</h1>
+          <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight text-accent">Serviços e Abordagem</h1>
           <p data-anime className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Ofereço um cuidado terapêutico online e personalizado para atender às suas necessidades, com base em uma abordagem empática e cientificamente embasada.
           </p>
@@ -89,19 +89,19 @@ export default function ServicosPage() {
             {services.map((service, index) => (
               <div key={index} data-anime className="h-full">
                 <Link href={service.href} className="block h-full group">
-                  <Card className="interactive-card flex flex-col text-center items-center p-6 bg-background/30 backdrop-blur-sm border border-accent/20 hover:border-accent/50 hover:bg-background/50 h-full rounded-2xl">
+                  <Card className="interactive-card flex flex-col text-center items-center p-6 bg-background/30 backdrop-blur-sm border border-primary/20 hover:border-primary/50 hover:bg-background/50 h-full rounded-2xl">
                     <CardHeader className="p-0 items-center">
                       <Draggable>
                         <div className="p-4 bg-background rounded-full mb-4 inline-block">
                           <service.icon className="w-8 h-8 text-primary" />
                         </div>
                       </Draggable>
-                      <CardTitle className="text-2xl">{service.title}</CardTitle>
+                      <CardTitle className="text-2xl text-accent">{service.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="mt-4 flex-grow">
                       <p className="text-muted-foreground">{service.description}</p>
                     </CardContent>
-                    <div className="font-semibold text-primary flex items-center justify-center group-hover:text-accent-foreground mt-4">
+                    <div className="font-semibold text-primary flex items-center justify-center group-hover:text-primary-foreground mt-4">
                       Saiba mais <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </Card>
@@ -114,7 +114,7 @@ export default function ServicosPage() {
 
       <section ref={approachRef} className="py-16 md:py-24 bg-secondary/20 overflow-hidden">
         <div className="container mx-auto px-4 relative">
-          <Plant3 className="absolute -bottom-20 -left-20 w-72 h-72 text-accent/30 opacity-50 -z-10 transform -rotate-12" />
+          <Plant3 className="absolute -bottom-20 -left-20 w-72 h-72 text-primary/30 opacity-50 -z-10 transform -rotate-12" />
           <Plant2 className="absolute -top-20 -right-20 w-80 h-80 text-secondary/40 opacity-50 -z-10 transform scale-x-[-1] rotate-45" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -131,7 +131,7 @@ export default function ServicosPage() {
               </Card>
             </div>
             <div data-anime>
-              <h2 className="text-3xl font-bold mb-4">Minha Abordagem Terapêutica</h2>
+              <h2 className="text-3xl font-bold mb-4 text-accent">Minha Abordagem Terapêutica</h2>
               <p className="text-muted-foreground mb-4">
                 Minha prática é fundamentada na Terapia Cognitivo-Comportamental (TCC), uma abordagem focada em resultados e validada cientificamente. Acredito em um processo colaborativo, onde identificamos padrões de pensamento e comportamento para construir estratégias eficazes para a mudança.
               </p>

@@ -26,18 +26,18 @@ const components: PortableTextComponents = {
     link: ({ children, value }) => {
       const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
       return (
-        <a href={value.href} rel={rel} className="text-primary underline hover:text-accent-foreground">
+        <a href={value.href} rel={rel} className="text-primary underline hover:text-accent">
           {children}
         </a>
       );
     },
   },
   block: {
-    h1: ({ children }) => <h1 className="text-4xl font-bold my-6 font-headline">{children}</h1>,
-    h2: ({ children }) => <h2 className="text-3xl font-bold my-5 font-headline">{children}</h2>,
-    h3: ({ children }) => <h3 className="text-2xl font-bold my-4 font-headline">{children}</h3>,
-    h4: ({ children }) => <h4 className="text-xl font-bold my-3 font-headline">{children}</h4>,
-    blockquote: ({ children }) => <blockquote className="border-l-4 border-accent bg-secondary/20 p-4 my-6 italic text-muted-foreground rounded-r-lg">{children}</blockquote>,
+    h1: ({ children }) => <h1 className="text-4xl font-bold my-6 font-headline text-accent">{children}</h1>,
+    h2: ({ children }) => <h2 className="text-3xl font-bold my-5 font-headline text-accent">{children}</h2>,
+    h3: ({ children }) => <h3 className="text-2xl font-bold my-4 font-headline text-accent">{children}</h3>,
+    h4: ({ children }) => <h4 className="text-xl font-bold my-3 font-headline text-accent">{children}</h4>,
+    blockquote: ({ children }) => <blockquote className="border-l-4 border-primary bg-secondary/20 p-4 my-6 italic text-muted-foreground rounded-r-lg">{children}</blockquote>,
     normal: ({ children }) => <p className="text-lg text-foreground/90 mb-6 leading-relaxed">{children}</p>,
   },
   list: {

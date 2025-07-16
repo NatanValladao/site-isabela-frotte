@@ -65,12 +65,12 @@ export default function SobreClient() {
       className="container mx-auto px-4 py-16 sm:px-6 lg:px-8 relative overflow-hidden"
     >
       <Plant1 className="absolute -bottom-24 -right-24 w-96 h-96 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
-      <Plant3 className="absolute top-1/2 -left-36 w-96 h-96 text-primary/10 opacity-70 -z-10 transform -rotate-45" />
+      <Plant3 className="absolute top-1/2 -left-36 w-96 h-96 text-accent/10 opacity-70 -z-10 transform -rotate-45" />
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         
         <div className="md:col-span-5 lg:col-span-5 relative" data-anime>
-          <Plant2 className="absolute -top-16 -left-16 w-64 h-64 text-accent/30 opacity-70 -z-20 transform -rotate-45" />
+          <Plant2 className="absolute -top-16 -left-16 w-64 h-64 text-primary/30 opacity-70 -z-20 transform -rotate-45" />
           <div className="transition-transform duration-300 hover:scale-105">
             <Card className="overflow-hidden shadow-xl rounded-2xl">
               <Image
@@ -87,7 +87,7 @@ export default function SobreClient() {
 
         <div className="md:col-span-7 lg:col-span-7" data-anime>
           <Badge variant="secondary" className="mb-4">CRP 05/77920</Badge>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-accent">
             Isabela Frotté Mello
           </h1>
           <p className="text-lg text-muted-foreground mb-6">
@@ -95,7 +95,7 @@ export default function SobreClient() {
           </p>
           
           <div className="space-y-4 text-muted-foreground">
-            <h3 className="text-2xl font-bold text-foreground">Trajetória e Experiência</h3>
+            <h3 className="text-2xl font-bold text-accent">Trajetória e Experiência</h3>
             <p>
               Ao longo da minha trajetória, desenvolvi experiência no acompanhamento de pessoas com Transtorno de Personalidade Borderline, Transtorno Afetivo Bipolar e outros transtornos relacionados a personalidade, humor, a neurodiversidade e à regulação emocional.
             </p>
@@ -105,7 +105,7 @@ export default function SobreClient() {
           </div>
 
           <div className="mt-8">
-            <h3 className="text-2xl font-bold mb-4">Meu Compromisso Como Psicóloga</h3>
+            <h3 className="text-2xl font-bold mb-4 text-accent">Meu Compromisso Como Psicóloga</h3>
              <p className="text-muted-foreground mb-6">
               Acredito em um atendimento humano, ético e transformador, que respeita o tempo de cada pessoa e acolhe suas necessidades emocionais com sensibilidade. Meu espaço terapêutico é aberto a pessoas que queiram se compreender melhor, enfrentar suas dores e construir novas possibilidades para sua vida.
             </p>
@@ -113,7 +113,7 @@ export default function SobreClient() {
               {valores.map((valor, index) => (
                 <li key={index} className="flex items-center" data-anime-item>
                   <div className="transition-transform duration-300 hover:scale-125 hover:rotate-12">
-                    <Check className="h-5 w-5 mr-3 text-accent-foreground bg-accent p-1 rounded-full"/>
+                    <Check className="h-5 w-5 mr-3 text-primary-foreground bg-primary p-1 rounded-full"/>
                   </div>
                   <span className="font-semibold">{valor.text}</span>
                 </li>
