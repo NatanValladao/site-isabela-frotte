@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -17,7 +17,7 @@ const navLinks = [
   { href: '/contato', label: 'Contato' },
 ];
 
-const phoneNumber = "5521999999999";
+const phoneNumber = "5522997604703";
 const message = "Olá, gostaria de agendar uma conversa.";
 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -34,11 +34,17 @@ const MobileNav = () => {
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="w-[300px] sm:w-[400px] flex flex-col p-0">
+         <SheetTitle className="sr-only">Menu de Navegação</SheetTitle>
         <div className="p-6 flex items-center justify-between border-b">
           <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
             <span className="font-headline text-lg font-bold">Isabela Frotté Mello</span>
           </Link>
-          <SheetTitle className="sr-only">Menu de Navegação</SheetTitle>
+          <SheetClose asChild>
+            <Button variant="ghost" size="icon">
+              <X className="h-6 w-6" />
+              <span className="sr-only">Fechar menu</span>
+            </Button>
+          </SheetClose>
         </div>
         <nav className="mt-8 flex-1 flex-col space-y-2 px-6">
           {navLinks.map((link) => (

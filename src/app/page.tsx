@@ -85,12 +85,12 @@ export default function Home() {
                 <div className="absolute bg-secondary/50 -bottom-10 -left-10 w-full h-full rounded-2xl" style={{transform: 'rotate(-6deg)'}}/>
                  <div className="interactive-card">
                    <Image
-                      src="https://i.imgur.com/k6p9A9i.jpeg"
-                      alt="Espaço de terapia calmo e acolhedor"
+                      src="https://imgur.com/IV9fEjN.png"
+                      alt="Psicóloga Isabela Frotté Mello"
                       width={600}
                       height={600}
                       className="relative mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full shadow-xl"
-                      data-ai-hint="calm abstract"
+                      data-ai-hint="professional woman"
                     />
                   </div>
               </div>

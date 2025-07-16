@@ -43,7 +43,7 @@ export default function RootLayout({
     image: `${siteUrl}/og-image.png`, // placeholder
     '@id': siteUrl,
     url: siteUrl,
-    telephone: '+5521999999999', // placeholder
+    telephone: '+5522997604703',
     priceRange: '$$',
     address: {
         '@type': 'PostalAddress',

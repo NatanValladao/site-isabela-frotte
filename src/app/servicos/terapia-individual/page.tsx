@@ -61,7 +61,7 @@ export default function TerapiaIndividualPage() {
               <div className="relative">
                  <div className="interactive-card">
                    <Image
-                      src="https://i.imgur.com/D4s2MAV.jpeg"
+                      src="https://imgur.com/pY0SYeu.png"
                       alt="Pessoa em sessão de terapia individual online, sentindo-se compreendida."
                       width={600}
                       height={400}
@@ -86,7 +86,7 @@ export default function TerapiaIndividualPage() {
             <div className="mx-auto w-full max-w-sm space-y-2 interactive-button">
               <Button asChild size="lg" className="font-semibold w-full bg-[#25D366] hover:bg-[#128C7E] text-white">
                 <Link 
-                  href={`https://wa.me/5521999999999?text=${encodeURIComponent("Olá, gostaria de saber mais sobre a terapia individual.")}`} 
+                  href={`https://wa.me/5522997604703?text=${encodeURIComponent("Olá, gostaria de saber mais sobre a terapia individual.")}`} 
                   target="_blank"
                   rel="noopener noreferrer"
                 >

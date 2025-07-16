@@ -7,7 +7,7 @@ import { WhatsappIcon } from '@/components/ui/WhatsappIcon';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 
-const phoneNumber = "5521999999999";
+const phoneNumber = "5522997604703";
 
 const getMessageForPath = (path: string) => {
   if (path.startsWith('/servicos/terapia-individual')) {

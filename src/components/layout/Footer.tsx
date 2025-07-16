@@ -17,7 +17,7 @@ const Footer = () => {
     { href: "/servicos/avaliacao-neuropsicologica", label: "Avaliação Neuropsicológica" },
   ];
   
-  const phoneNumber = "5521999999999";
+  const phoneNumber = "5522997604703";
   const message = "Olá, gostaria de agendar uma conversa.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -75,7 +75,7 @@ const Footer = () => {
                  <li>
                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
                     <WhatsappIcon className="h-4 w-4" />
-                    <span>(21) 99999-9999</span>
+                    <span>(22) 99760-4703</span>
                   </a>
                 </li>
                 <li>

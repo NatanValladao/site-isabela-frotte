@@ -74,7 +74,7 @@ export default function SobreClient() {
           <div className="transition-transform duration-300 hover:scale-105">
             <Card className="overflow-hidden shadow-xl rounded-2xl bg-card">
               <Image
-                src="https://i.imgur.com/KMX841X.jpeg"
+                src="https://imgur.com/iBQDcaq.png"
                 alt="Foto profissional da Psicóloga Isabela Frotté Mello."
                 width={600}
                 height={700}

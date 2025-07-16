@@ -44,7 +44,7 @@ export default function TerapiaDeCasalPage() {
                 <div className="relative">
                     <div className="interactive-card">
                     <Image
-                        src="https://i.imgur.com/H1tIeTo.jpeg"
+                        src="https://imgur.com/csPfZen.png"
                         alt="Casal conversando de forma calma e construtiva durante sessão de terapia."
                         width={600}
                         height={400}
@@ -86,7 +86,7 @@ export default function TerapiaDeCasalPage() {
             <div className="mx-auto w-full max-w-sm space-y-2 interactive-button">
               <Button asChild size="lg" className="font-semibold w-full bg-[#25D366] hover:bg-[#128C7E] text-white">
                 <Link 
-                  href={`https://wa.me/5521999999999?text=${encodeURIComponent("Olá, gostaria de saber mais sobre a terapia de casal.")}`} 
+                  href={`https://wa.me/5522997604703?text=${encodeURIComponent("Olá, gostaria de saber mais sobre a terapia de casal.")}`} 
                   target="_blank"
                   rel="noopener noreferrer"
                 >
