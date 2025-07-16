@@ -50,7 +50,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-hidden">
       <main className="flex-1">
         <section ref={heroRef} className="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden">
            <Plant1 className="absolute -top-32 -left-32 w-96 h-96 text-secondary/70 opacity-20 -z-10" />
@@ -85,7 +85,7 @@ export default function Home() {
                 <div className="absolute bg-secondary/50 -bottom-10 -left-10 w-full h-full rounded-2xl" style={{transform: 'rotate(-6deg)'}}/>
                  <div className="interactive-card">
                    <Image
-                      src="https://placehold.co/600x600.png"
+                      src="https://i.imgur.com/k6p9A9i.jpeg"
                       alt="Espaço de terapia calmo e acolhedor"
                       width={600}
                       height={600}
@@ -116,7 +116,7 @@ export default function Home() {
               {[
                 { icon: HeartHandshake, title: "Terapia Individual", href: "/servicos/terapia-individual", description: "Para adolescentes e adultos. Um espaço seguro para lidar com questões de humor, personalidade e neurodiversidade." },
                 { icon: Users, title: "Terapia de Casal", href: "/servicos/terapia-de-casal", description: "Fortaleça a comunicação, a confiança e a conexão em seu relacionamento." },
-                { icon: BrainCircuit, title: "Avaliação Neuropsicológica", href: "/servicos/orientacao-profissional", description: "Investigação detalhada das funções cognitivas para diagnóstico e planejamento terapêutico." },
+                { icon: BrainCircuit, title: "Avaliação Neuropsicológica", href: "/servicos/avaliacao-neuropsicologica", description: "Investigação detalhada das funções cognitivas para diagnóstico e planejamento terapêutico." },
               ].map((service) => (
                 <div key={service.title} data-anime>
                    <Link href={service.href} className="block h-full">

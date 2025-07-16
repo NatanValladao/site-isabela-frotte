@@ -16,7 +16,7 @@ const getMessageForPath = (path: string) => {
   if (path.startsWith('/servicos/terapia-de-casal')) {
     return "Olá, gostaria de saber mais sobre a terapia de casal.";
   }
-  if (path.startsWith('/servicos/orientacao-profissional')) {
+  if (path.startsWith('/servicos/avaliacao-neuropsicologica')) {
     return "Olá, gostaria de saber mais sobre a avaliação neuropsicológica.";
   }
   return "Olá, gostaria de agendar uma conversa.";

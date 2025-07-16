@@ -28,7 +28,7 @@ const services = [
   {
     icon: BrainCircuit,
     title: "Avaliação Neuropsicológica",
-    href: "/servicos/orientacao-profissional",
+    href: "/servicos/avaliacao-neuropsicologica",
     description: "Investigação aprofundada das funções cognitivas (memória, atenção, etc.) para auxiliar no diagnóstico e planejamento terapêutico.",
   },
 ];
@@ -72,7 +72,7 @@ export default function ServicosPage() {
   }, []);
 
   return (
-    <>
+    <div className="overflow-hidden">
       <section ref={headerRef} className="py-16 md:py-24 bg-card/50 relative overflow-hidden">
         <Plant1 className="absolute top-0 -left-24 w-72 h-72 text-primary/30 opacity-30 -z-10" />
         <div className="container mx-auto px-4 text-center">
@@ -121,7 +121,7 @@ export default function ServicosPage() {
             <div data-anime className="relative h-80 md:h-[450px] flex items-center justify-center">
               <Card className="overflow-hidden shadow-xl rounded-2xl w-full max-w-[400px]">
                 <Image
-                    src="https://placehold.co/400x450.png"
+                    src="https://i.imgur.com/gGyfM3S.jpeg"
                     alt="Espaço terapêutico calmo e acolhedor, simbolizando a abordagem da psicóloga."
                     width={400}
                     height={450}
@@ -147,6 +147,6 @@ export default function ServicosPage() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

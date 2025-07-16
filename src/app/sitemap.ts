@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/servicos',
     '/servicos/terapia-individual',
     '/servicos/terapia-de-casal',
-    '/servicos/orientacao-profissional', // This URL slug now points to Avaliação Neuropsicológica
+    '/servicos/avaliacao-neuropsicologica',
     '/blog',
     '/contato',
   ].map((route) => ({

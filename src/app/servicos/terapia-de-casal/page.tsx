@@ -24,7 +24,7 @@ export default function TerapiaDeCasalPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-hidden">
       <main className="flex-1">
         <section className="relative w-full py-20 md:py-28 bg-card/50 overflow-hidden">
           <Plant3 className="absolute -bottom-24 -left-24 w-80 h-80 text-primary/50 opacity-20 -z-10" />
@@ -44,7 +44,7 @@ export default function TerapiaDeCasalPage() {
                 <div className="relative">
                     <div className="interactive-card">
                     <Image
-                        src="https://placehold.co/600x400.png"
+                        src="https://i.imgur.com/H1tIeTo.jpeg"
                         alt="Casal conversando de forma calma e construtiva durante sessão de terapia."
                         width={600}
                         height={400}

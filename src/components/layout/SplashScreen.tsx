@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import anime from 'animejs';
 import { cn } from '@/lib/utils';
-import { Brain } from 'lucide-react';
+import { BrainCircuit } from 'lucide-react';
 
 export default function SplashScreen({ onAnimationComplete }: { onAnimationComplete: () => void }) {
   const splashRef = useRef<HTMLDivElement>(null);
@@ -76,7 +76,7 @@ export default function SplashScreen({ onAnimationComplete }: { onAnimationCompl
           ref={logoRef}
           className="p-4 bg-card rounded-full mb-4"
         >
-          <Brain className="w-12 h-12 text-primary" />
+          <BrainCircuit className="w-12 h-12 text-primary" />
         </div>
         
         <h1

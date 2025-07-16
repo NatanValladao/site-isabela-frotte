@@ -14,7 +14,7 @@ const Footer = () => {
     { href: "/servicos", label: "Visão Geral" },
     { href: "/servicos/terapia-individual", label: "Terapia Individual" },
     { href: "/servicos/terapia-de-casal", label: "Terapia de Casal" },
-    { href: "/servicos/orientacao-profissional", label: "Avaliação Neuropsicológica" },
+    { href: "/servicos/avaliacao-neuropsicologica", label: "Avaliação Neuropsicológica" },
   ];
   
   const phoneNumber = "5521999999999";
