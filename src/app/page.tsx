@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import anime from 'animejs';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, BrainCircuit, HeartHand, HelpingHand } from "lucide-react";
+import { ArrowRight, BrainCircuit, HeartHandshake, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Plant1 } from "@/components/ui/Plant1";
@@ -53,9 +53,9 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         <section ref={heroRef} className="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden">
-          <Plant1 className="absolute -top-32 -left-32 w-96 h-96 text-secondary/70 opacity-20 -z-10" />
-          <Plant3 className="absolute -bottom-32 left-1/4 w-80 h-80 text-primary/10 opacity-60 -z-10 transform" />
-          <Plant2 className="absolute -bottom-48 -right-32 w-[28rem] h-[28rem] text-accent/20 opacity-80 -z-10 transform -rotate-12" />
+           <Plant1 className="absolute -top-32 -left-32 w-96 h-96 text-secondary/70 opacity-20 -z-10" />
+           <Plant3 className="absolute -bottom-48 left-1/4 w-80 h-80 text-primary/10 opacity-60 -z-10 transform" />
+           <Plant2 className="absolute top-1/2 -right-32 w-[28rem] h-[28rem] text-accent/20 opacity-30 -z-10 transform -rotate-12" />
           
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
@@ -114,8 +114,8 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl items-stretch gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
               {[
-                { icon: HeartHand, title: "Terapia Individual", href: "/servicos/terapia-individual", description: "Para adolescentes e adultos. Um espaço seguro para lidar com questões de humor, personalidade e neurodiversidade." },
-                { icon: HelpingHand, title: "Terapia de Casal", href: "/servicos/terapia-de-casal", description: "Fortaleça a comunicação, a confiança e a conexão em seu relacionamento." },
+                { icon: HeartHandshake, title: "Terapia Individual", href: "/servicos/terapia-individual", description: "Para adolescentes e adultos. Um espaço seguro para lidar com questões de humor, personalidade e neurodiversidade." },
+                { icon: Users, title: "Terapia de Casal", href: "/servicos/terapia-de-casal", description: "Fortaleça a comunicação, a confiança e a conexão em seu relacionamento." },
                 { icon: BrainCircuit, title: "Avaliação Neuropsicológica", href: "/servicos/orientacao-profissional", description: "Investigação detalhada das funções cognitivas para diagnóstico e planejamento terapêutico." },
               ].map((service) => (
                 <div key={service.title} data-anime>

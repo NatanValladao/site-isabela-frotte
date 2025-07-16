@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import anime from 'animejs';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BrainCircuit, HeartHand, HelpingHand, ArrowRight } from "lucide-react";
+import { BrainCircuit, HeartHandshake, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Plant1 } from "@/components/ui/Plant1";
 import { Plant2 } from "@/components/ui/Plant2";
@@ -14,13 +14,13 @@ import { Draggable } from '@/components/ui/Draggable';
 
 const services = [
   {
-    icon: HeartHand,
+    icon: HeartHandshake,
     title: "Terapia Individual",
     href: "/servicos/terapia-individual",
     description: "Um espaço seguro e confidencial para adolescentes e adultos explorarem suas emoções, com foco em regulação emocional, humor e personalidade.",
   },
   {
-    icon: HelpingHand,
+    icon: Users,
     title: "Terapia de Casal",
     href: "/servicos/terapia-de-casal",
     description: "Dedicada a casais que buscam melhorar a comunicação, resolver conflitos e fortalecer o vínculo afetivo para um relacionamento mais saudável.",
