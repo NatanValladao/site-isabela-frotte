@@ -54,8 +54,8 @@ export default function Home() {
       <main className="flex-1">
         <section ref={heroRef} className="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden">
           <Plant1 className="absolute -bottom-32 -left-32 w-96 h-96 text-secondary/70 opacity-30 -z-10" />
-          <Plant2 className="absolute -top-32 -right-32 w-96 h-96 text-accent/70 opacity-30 -z-10 transform scale-x-[-1] rotate-12" />
-          <Plant3 className="absolute bottom-1/4 -right-48 w-96 h-96 text-primary/10 opacity-70 -z-10 transform rotate-45" />
+          <Plant2 className="absolute top-0 -right-48 w-96 h-96 text-accent/70 opacity-30 -z-10 transform scale-x-[-1] rotate-12" />
+          <Plant3 className="absolute bottom-0 -right-48 w-96 h-96 text-primary/10 opacity-70 -z-10 transform rotate-45" />
 
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
