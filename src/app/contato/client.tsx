@@ -78,7 +78,7 @@ export default function ContatoClient() {
   return (
     <div ref={pageRef}>
       <section 
-        className="py-16 md:py-24 bg-secondary/20"
+        className="py-16 md:py-24 bg-card/50"
       >
         <div className="container mx-auto px-4 text-center">
           <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight text-accent">Entre em Contato</h1>
@@ -95,7 +95,7 @@ export default function ContatoClient() {
           <Plant2 className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
           <Plant3 className="absolute -top-24 -left-24 w-72 h-72 text-primary/50 opacity-50 -z-10" />
 
-          <div className="max-w-2xl mx-auto bg-card/60 p-8 rounded-2xl shadow-lg border" data-anime>
+          <div className="max-w-2xl mx-auto bg-card p-8 rounded-2xl shadow-lg border" data-anime>
             <h2 className="text-3xl font-bold mb-2 text-center text-accent">Formulário para WhatsApp</h2>
             <p className="text-muted-foreground text-center mb-6">Sua mensagem será enviada diretamente para o meu WhatsApp.</p>
             <Form {...form}>

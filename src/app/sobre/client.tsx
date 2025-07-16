@@ -72,7 +72,7 @@ export default function SobreClient() {
         <div className="md:col-span-5 lg:col-span-5 relative" data-anime>
           <Plant2 className="absolute -top-16 -left-16 w-64 h-64 text-primary/30 opacity-70 -z-20 transform -rotate-45" />
           <div className="transition-transform duration-300 hover:scale-105">
-            <Card className="overflow-hidden shadow-xl rounded-2xl">
+            <Card className="overflow-hidden shadow-xl rounded-2xl bg-card">
               <Image
                 src="https://placehold.co/600x700.png"
                 alt="Foto profissional da Psicóloga Isabela Frotté Mello."
@@ -85,7 +85,7 @@ export default function SobreClient() {
           </div>
         </div>
 
-        <div className="md:col-span-7 lg:col-span-7" data-anime>
+        <div className="md:col-span-7 lg:col-span-7 p-8 rounded-2xl bg-card/80 backdrop-blur-sm" data-anime>
           <Badge variant="secondary" className="mb-4">CRP 05/77920</Badge>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6 text-accent">
             Isabela Frotté Mello

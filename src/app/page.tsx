@@ -98,7 +98,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section ref={servicesRef} id="services" className="w-full py-12 md:py-24 lg:py-32 bg-secondary/20 relative overflow-hidden">
+        <section ref={servicesRef} id="services" className="w-full py-12 md:py-24 lg:py-32 bg-card/50 relative overflow-hidden">
           <div className="container px-4 md:px-6 relative">
             <Plant3 className="absolute -bottom-20 -right-20 w-80 h-80 text-secondary/70 opacity-30 -z-10" />
             <Plant1 className="absolute -top-24 -left-20 w-80 h-80 text-accent/10 opacity-50 -z-10" />
@@ -120,7 +120,7 @@ export default function Home() {
               ].map((service) => (
                 <div key={service.title} data-anime>
                    <Link href={service.href} className="block h-full">
-                     <Card className="interactive-card bg-background/30 backdrop-blur-sm border border-primary/20 hover:border-primary/50 hover:bg-background/50 flex flex-col items-center text-center p-6 rounded-2xl h-full">
+                     <Card className="interactive-card bg-background/30 backdrop-blur-sm border border-primary/20 hover:border-primary/50 hover:bg-card/90 flex flex-col items-center text-center p-6 rounded-2xl h-full">
                        <CardHeader className="p-0 items-center">
                          <Draggable>
                            <div className="p-4 bg-background rounded-full mb-4 inline-block">

@@ -26,7 +26,7 @@ export default function TerapiaIndividualPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="relative w-full py-20 md:py-28 bg-secondary/20 overflow-hidden">
+        <section className="relative w-full py-20 md:py-28 bg-card/50 overflow-hidden">
           <Plant1 className="absolute -bottom-24 -left-24 w-80 h-80 text-primary/50 opacity-20 -z-10" />
           <div className="container px-4 md:px-6 text-center">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-accent">
@@ -74,7 +74,7 @@ export default function TerapiaIndividualPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-secondary/20 relative overflow-hidden">
+        <section className="w-full py-16 md:py-24 bg-card/50 relative overflow-hidden">
           <Plant2 className="absolute -top-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">

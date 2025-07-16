@@ -73,7 +73,7 @@ export default function ServicosPage() {
 
   return (
     <>
-      <section ref={headerRef} className="py-16 md:py-24 bg-secondary/20 relative overflow-hidden">
+      <section ref={headerRef} className="py-16 md:py-24 bg-card/50 relative overflow-hidden">
         <Plant1 className="absolute top-0 -left-24 w-72 h-72 text-primary/30 opacity-30 -z-10" />
         <div className="container mx-auto px-4 text-center">
           <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight text-accent">Serviços e Abordagem</h1>
@@ -89,7 +89,7 @@ export default function ServicosPage() {
             {services.map((service, index) => (
               <div key={index} data-anime className="h-full">
                 <Link href={service.href} className="block h-full group">
-                  <Card className="interactive-card flex flex-col text-center items-center p-6 bg-background/30 backdrop-blur-sm border border-primary/20 hover:border-primary/50 hover:bg-background/50 h-full rounded-2xl">
+                  <Card className="interactive-card flex flex-col text-center items-center p-6 bg-card/80 backdrop-blur-sm border border-primary/20 hover:border-primary/50 hover:bg-card/90 h-full rounded-2xl">
                     <CardHeader className="p-0 items-center">
                       <Draggable>
                         <div className="p-4 bg-background rounded-full mb-4 inline-block">
@@ -112,7 +112,7 @@ export default function ServicosPage() {
         </div>
       </section>
 
-      <section ref={approachRef} className="py-16 md:py-24 bg-secondary/20 overflow-hidden">
+      <section ref={approachRef} className="py-16 md:py-24 bg-card/50 overflow-hidden">
         <div className="container mx-auto px-4 relative">
           <Plant3 className="absolute -bottom-20 -left-20 w-72 h-72 text-primary/30 opacity-50 -z-10 transform -rotate-12" />
           <Plant2 className="absolute -top-20 -right-20 w-80 h-80 text-secondary/40 opacity-50 -z-10 transform scale-x-[-1] rotate-45" />

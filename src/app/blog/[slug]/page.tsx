@@ -77,7 +77,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
         <Plant2 className="absolute -bottom-32 -right-32 w-96 h-96 text-primary/70 opacity-30 -z-10 transform scale-x-[-1] rotate-12" />
 
         <article className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto bg-background/50 backdrop-blur-sm p-8 rounded-2xl">
+        <div className="max-w-3xl mx-auto bg-card backdrop-blur-sm p-8 rounded-2xl">
             <header className="mb-12 text-center">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-accent">{post.title}</h1>
             {post.publishedAt && (

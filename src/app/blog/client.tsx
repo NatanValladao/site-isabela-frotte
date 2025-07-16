@@ -52,7 +52,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
     <>
       <section 
         ref={headerRef}
-        className="py-16 md:py-24 bg-secondary/20"
+        className="py-16 md:py-24 bg-card/50"
       >
         <div className="container mx-auto px-4 text-center">
           <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight text-accent">Blog</h1>
@@ -74,7 +74,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
               <div key={post._id} data-anime>
-                <Card className="interactive-card flex flex-col overflow-hidden group bg-background/30 backdrop-blur-sm border border-primary/20 hover:border-primary/50 hover:bg-background/50 rounded-2xl h-full">
+                <Card className="interactive-card flex flex-col overflow-hidden group bg-card backdrop-blur-sm border border-primary/20 hover:border-primary/50 hover:bg-card/90 rounded-2xl h-full">
                   <div className="overflow-hidden rounded-t-2xl">
                     <Link href={`/blog/${post.slug?.current}`} className="block">
                       <div className="transition-transform duration-500 group-hover:scale-105">

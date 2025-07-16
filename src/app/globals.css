@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 30 20% 97%; /* #F9F7F5 */
+    --background: 228 30% 95%; /* Muted Blue from image */
     --foreground: 228 18% 30%; /* #3D405B */
 
-    --card: 33 13% 92%;
+    --card: 30 20% 97%; /* #F9F7F5 - Off-white */
     --card-foreground: 228 18% 30%;
 
     --popover: 30 20% 97%;
     --popover-foreground: 228 18% 30%;
 
-    --primary: 351 27% 81%; /* #E1BCC0 - Was accent */
+    --primary: 351 27% 81%; /* #E1BCC0 - Pink from roses */
     --primary-foreground: 228 18% 20%; /* Darker for contrast on pink */
 
-    --secondary: 33 13% 85%;
+    --secondary: 33 13% 85%; /* Greige for secondary elements */
     --secondary-foreground: 228 18% 30%;
 
     --muted: 33 13% 85%;
     --muted-foreground: 228 18% 45%;
 
-    --accent: 228 18% 30%; /* #3D405B - Was primary */
+    --accent: 228 18% 30%; /* #3D405B - Deep Grey */
     --accent-foreground: 30 20% 97%; /* #F9F7F5 */
     
     --destructive: 0 84.2% 60.2%;
@@ -31,7 +31,7 @@
     --border: 33 13% 88%;
     --input: 33 13% 88%;
     --ring: 351 27% 75%;
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Slightly more rounded corners */
   }
 
   .dark {

@@ -74,7 +74,7 @@ export default function SplashScreen({ onAnimationComplete }: { onAnimationCompl
       >
         <div
           ref={logoRef}
-          className="p-4 bg-background/50 rounded-full mb-4"
+          className="p-4 bg-card rounded-full mb-4"
         >
           <Brain className="w-12 h-12 text-primary" />
         </div>
