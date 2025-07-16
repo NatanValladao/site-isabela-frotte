@@ -113,7 +113,7 @@ export default function SobreClient() {
               {valores.map((valor, index) => (
                 <li key={index} className="flex items-center" data-anime-item>
                   <div className="transition-transform duration-300 hover:scale-125 hover:rotate-12">
-                    <Check className="h-5 w-5 mr-3 text-primary-foreground bg-primary p-1 rounded-full"/>
+                    <Check className="h-5 w-5 mr-3 text-primary"/>
                   </div>
                   <span className="font-semibold">{valor.text}</span>
                 </li>

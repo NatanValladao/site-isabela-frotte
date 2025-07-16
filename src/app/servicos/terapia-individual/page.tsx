@@ -52,7 +52,7 @@ export default function TerapiaIndividualPage() {
                 <ul className="space-y-3 mt-6">
                   {benefits.map((benefit, index) => (
                     <li key={index} className="flex items-center">
-                      <Check className="h-5 w-5 mr-3 text-primary-foreground bg-primary p-1 rounded-full" />
+                      <Check className="h-5 w-5 mr-3 text-primary" />
                       <span className="font-medium">{benefit}</span>
                     </li>
                   ))}
