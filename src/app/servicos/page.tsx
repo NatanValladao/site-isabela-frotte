@@ -136,13 +136,13 @@ export default function ServicosPage() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div data-anime className="relative h-80 md:h-[450px] flex items-center justify-center">
-              <Card className="overflow-hidden shadow-xl rounded-2xl w-full max-w-[400px]">
+            <div data-anime className="relative flex items-center justify-center">
+              <Card className="overflow-hidden shadow-xl rounded-2xl w-full max-w-sm aspect-[4/5]">
                 <Image
-                    src="https://imgur.com/pY0SYeu.png"
+                    src="https://imgur.com/iBQDcaq.png"
                     alt="Espaço terapêutico calmo e acolhedor, simbolizando a abordagem da psicóloga."
                     width={400}
-                    height={450}
+                    height={500}
                     className="object-cover w-full h-full"
                     data-ai-hint="calm therapy room"
                 />

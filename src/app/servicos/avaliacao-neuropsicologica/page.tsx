@@ -69,8 +69,8 @@ export default function AvaliacaoNeuropsicologicaPage() {
                       src="https://imgur.com/jtbcFgY.png"
                       alt="Ilustração de um cérebro com conexões, representando as funções cognitivas."
                       width={600}
-                      height={400}
-                      className="relative mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full shadow-xl"
+                      height={750}
+                      className="relative mx-auto aspect-[4/5] overflow-hidden rounded-xl object-cover sm:w-full shadow-xl"
                       data-ai-hint="brain connections"
                     />
                   </div>

@@ -49,11 +49,11 @@ export default function TerapiaDeCasalPage() {
                 <div className="relative">
                     <div className="interactive-card">
                     <Image
-                        src="https://imgur.com/csPfZen.png"
+                        src="https://imgur.com/pY0SYeu.png"
                         alt="Casal conversando de forma calma e construtiva durante sessão de terapia."
                         width={600}
-                        height={400}
-                        className="relative mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full shadow-xl"
+                        height={750}
+                        className="relative mx-auto aspect-[4/5] overflow-hidden rounded-xl object-cover sm:w-full shadow-xl"
                         data-ai-hint="couple talking therapy"
                         />
                     </div>

@@ -106,8 +106,8 @@ export default function Home() {
                       src="https://imgur.com/IV9fEjN.png"
                       alt="Psicóloga Isabela Frotté Mello"
                       width={600}
-                      height={600}
-                      className="relative mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full shadow-xl"
+                      height={750}
+                      className="relative mx-auto aspect-[4/5] overflow-hidden rounded-xl object-cover sm:w-full shadow-xl"
                       data-ai-hint="professional woman"
                     />
                   </div>
