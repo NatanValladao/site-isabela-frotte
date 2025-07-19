@@ -139,7 +139,7 @@ export default function ServicosPage() {
             <div data-anime className="relative h-80 md:h-[450px] flex items-center justify-center">
               <Card className="overflow-hidden shadow-xl rounded-2xl w-full max-w-[400px]">
                 <Image
-                    src="https://i.imgur.com/gGyfM3S.jpeg"
+                    src="https://imgur.com/pY0SYeu.png"
                     alt="Espaço terapêutico calmo e acolhedor, simbolizando a abordagem da psicóloga."
                     width={400}
                     height={450}
