@@ -6,8 +6,6 @@ import Image from "next/image";
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import type { Metadata } from 'next';
-import { Plant1 } from "@/components/ui/Plant1";
-import { Plant2 } from "@/components/ui/Plant2";
 
 export const revalidate = 60; // Revalidate at most every 60 seconds
 
@@ -73,8 +71,22 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
   return (
     <div className="relative overflow-hidden">
-        <Plant1 className="absolute -top-32 -left-32 w-96 h-96 text-secondary/70 opacity-30 -z-10" />
-        <Plant2 className="absolute -bottom-32 -right-32 w-96 h-96 text-primary/70 opacity-30 -z-10 transform scale-x-[-1] rotate-12" />
+        <Image
+          src="https://i.imgur.com/ECaF4tf.png"
+          alt="decoração de planta"
+          width={384}
+          height={384}
+          className="absolute -top-32 -left-32 w-96 h-96 opacity-20 -z-10"
+          aria-hidden="true"
+        />
+        <Image
+          src="https://i.imgur.com/cynnrcO.png"
+          alt="decoração de planta"
+          width={384}
+          height={384}
+          className="absolute -bottom-32 -right-32 w-96 h-96 opacity-20 -z-10 transform scale-x-[-1] rotate-12"
+          aria-hidden="true"
+        />
 
         <article className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto bg-card backdrop-blur-sm p-8 rounded-2xl">

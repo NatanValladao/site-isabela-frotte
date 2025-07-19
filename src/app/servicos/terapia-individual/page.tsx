@@ -3,8 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
-import { Plant1 } from '@/components/ui/Plant1';
-import { Plant2 } from '@/components/ui/Plant2';
 import { WhatsappIcon } from '@/components/ui/WhatsappIcon';
 
 export const metadata: Metadata = {
@@ -27,7 +25,14 @@ export default function TerapiaIndividualPage() {
     <div className="flex flex-col min-h-screen overflow-hidden">
       <main className="flex-1">
         <section className="relative w-full py-20 md:py-28 bg-card/50 overflow-hidden">
-          <Plant1 className="absolute -bottom-24 -left-24 w-80 h-80 text-primary/50 opacity-20 -z-10" />
+          <Image
+            src="https://i.imgur.com/ECaF4tf.png"
+            alt="decoração de planta"
+            width={320}
+            height={320}
+            className="absolute -bottom-24 -left-24 w-80 h-80 opacity-20 -z-10"
+            aria-hidden="true"
+          />
           <div className="container px-4 md:px-6 text-center">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-accent">
               Terapia Individual
@@ -75,7 +80,14 @@ export default function TerapiaIndividualPage() {
         </section>
 
         <section className="w-full py-16 md:py-24 bg-card/50 relative overflow-hidden">
-          <Plant2 className="absolute -top-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
+          <Image
+            src="https://i.imgur.com/0hvGc4Q.png"
+            alt="decoração de planta"
+            width={320}
+            height={320}
+            className="absolute -top-24 -right-24 w-80 h-80 opacity-20 -z-10 transform scale-x-[-1]"
+            aria-hidden="true"
+          />
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-accent">Inicie Sua Jornada de Transformação</h2>

@@ -10,9 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { WhatsappIcon } from '@/components/ui/WhatsappIcon';
-import { Plant2 } from "@/components/ui/Plant2";
-import { Plant3 } from "@/components/ui/Plant3";
 import { toast } from '@/hooks/use-toast';
+import Image from 'next/image';
 
 const phoneNumber = "5522997604703";
 
@@ -76,7 +75,7 @@ export default function ContatoClient() {
   }, []);
 
   return (
-    <div ref={pageRef}>
+    <div ref={pageRef} className="overflow-hidden">
       <section 
         className="py-16 md:py-24 bg-card/50"
       >
@@ -89,11 +88,25 @@ export default function ContatoClient() {
       </section>
 
       <section 
-        className="py-16 md:py-24 relative overflow-hidden"
+        className="py-16 md:py-24 relative"
       >
         <div className="container mx-auto px-4 relative">
-          <Plant2 className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
-          <Plant3 className="absolute -top-24 -left-24 w-72 h-72 text-primary/50 opacity-50 -z-10" />
+          <Image
+            src="https://i.imgur.com/cynnrcO.png"
+            alt="decoração de planta"
+            width={320}
+            height={320}
+            className="absolute -bottom-24 -right-24 w-80 h-80 opacity-20 -z-10 transform scale-x-[-1]"
+            aria-hidden="true"
+          />
+          <Image
+            src="https://i.imgur.com/ECaF4tf.png"
+            alt="decoração de planta"
+            width={288}
+            height={288}
+            className="absolute -top-24 -left-24 w-72 h-72 opacity-20 -z-10"
+            aria-hidden="true"
+          />
 
           <div className="max-w-2xl mx-auto bg-card p-8 rounded-2xl shadow-lg border" data-anime>
             <h2 className="text-3xl font-bold mb-2 text-center text-accent">Formulário para WhatsApp</h2>

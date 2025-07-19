@@ -6,9 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BrainCircuit, HeartHandshake, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Plant1 } from "@/components/ui/Plant1";
-import { Plant2 } from "@/components/ui/Plant2";
-import { Plant3 } from "@/components/ui/Plant3";
 import Image from 'next/image';
 import { Draggable } from '@/components/ui/Draggable';
 
@@ -74,7 +71,14 @@ export default function ServicosPage() {
   return (
     <div className="overflow-hidden">
       <section ref={headerRef} className="py-16 md:py-24 bg-card/50 relative overflow-hidden">
-        <Plant1 className="absolute top-0 -left-24 w-72 h-72 text-primary/30 opacity-30 -z-10" />
+        <Image
+          src="https://i.imgur.com/ECaF4tf.png"
+          alt="decoração de planta"
+          width={288}
+          height={288}
+          className="absolute top-0 -left-24 w-72 h-72 opacity-20 -z-10"
+          aria-hidden="true"
+        />
         <div className="container mx-auto px-4 text-center">
           <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight text-accent">Serviços e Abordagem</h1>
           <p data-anime className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -114,8 +118,22 @@ export default function ServicosPage() {
 
       <section ref={approachRef} className="py-16 md:py-24 bg-card/50 overflow-hidden">
         <div className="container mx-auto px-4 relative">
-          <Plant3 className="absolute -bottom-20 -left-20 w-72 h-72 text-primary/30 opacity-50 -z-10 transform -rotate-12" />
-          <Plant2 className="absolute -top-20 -right-20 w-80 h-80 text-secondary/40 opacity-50 -z-10 transform scale-x-[-1] rotate-45" />
+          <Image
+            src="https://i.imgur.com/Zd4DB66.png"
+            alt="decoração de planta"
+            width={288}
+            height={288}
+            className="absolute -bottom-20 -left-20 w-72 h-72 opacity-20 -z-10 transform -rotate-12"
+            aria-hidden="true"
+          />
+           <Image
+            src="https://i.imgur.com/cynnrcO.png"
+            alt="decoração de planta"
+            width={320}
+            height={320}
+            className="absolute -top-20 -right-20 w-80 h-80 opacity-20 -z-10 transform scale-x-[-1] rotate-45"
+            aria-hidden="true"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div data-anime className="relative h-80 md:h-[450px] flex items-center justify-center">

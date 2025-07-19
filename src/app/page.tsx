@@ -7,9 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, BrainCircuit, HeartHandshake, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Plant1 } from "@/components/ui/Plant1";
-import { Plant2 } from "@/components/ui/Plant2";
-import { Plant3 } from "@/components/ui/Plant3";
 import { Draggable } from '@/components/ui/Draggable';
 
 export default function Home() {
@@ -53,9 +50,30 @@ export default function Home() {
     <div className="flex flex-col min-h-screen overflow-hidden">
       <main className="flex-1">
         <section ref={heroRef} className="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden">
-           <Plant1 className="absolute -top-32 -left-32 w-96 h-96 text-secondary/70 opacity-20 -z-10" />
-           <Plant3 className="absolute -bottom-48 left-1/4 w-80 h-80 text-primary/10 opacity-60 -z-10 transform" />
-           <Plant2 className="absolute top-1/2 -right-32 w-[28rem] h-[28rem] text-accent/20 opacity-30 -z-10 transform -rotate-12" />
+           <Image
+            src="https://i.imgur.com/cynnrcO.png"
+            alt="decoração de planta"
+            width={384}
+            height={384}
+            className="absolute -top-32 -left-32 w-96 h-96 opacity-15 -z-10"
+            aria-hidden="true"
+          />
+          <Image
+            src="https://i.imgur.com/ECaF4tf.png"
+            alt="decoração de planta"
+            width={320}
+            height={320}
+            className="absolute -bottom-48 left-1/4 w-80 h-80 opacity-10 -z-10 transform"
+            aria-hidden="true"
+          />
+           <Image
+            src="https://i.imgur.com/0hvGc4Q.png"
+            alt="decoração de planta"
+            width={448}
+            height={448}
+            className="absolute top-1/2 -right-32 w-[28rem] h-[28rem] opacity-20 -z-10 transform -rotate-12"
+            aria-hidden="true"
+          />
           
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
@@ -100,8 +118,22 @@ export default function Home() {
 
         <section ref={servicesRef} id="services" className="w-full py-12 md:py-24 lg:py-32 bg-card/50 relative overflow-hidden">
           <div className="container px-4 md:px-6 relative">
-            <Plant3 className="absolute -bottom-20 -right-20 w-80 h-80 text-secondary/70 opacity-30 -z-10" />
-            <Plant1 className="absolute -top-24 -left-20 w-80 h-80 text-accent/10 opacity-50 -z-10" />
+             <Image
+              src="https://i.imgur.com/Zd4DB66.png"
+              alt="decoração de planta"
+              width={320}
+              height={320}
+              className="absolute -bottom-20 -right-20 w-80 h-80 opacity-20 -z-10"
+              aria-hidden="true"
+            />
+            <Image
+              src="https://i.imgur.com/ECaF4tf.png"
+              alt="decoração de planta"
+              width={320}
+              height={320}
+              className="absolute -top-24 -left-20 w-80 h-80 opacity-20 -z-10"
+              aria-hidden="true"
+            />
 
             <div className="flex flex-col items-center justify-center space-y-4 text-center" data-anime>
               <div className="space-y-2">

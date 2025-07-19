@@ -6,9 +6,6 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { Check } from "lucide-react";
-import { Plant1 } from "@/components/ui/Plant1";
-import { Plant2 } from "@/components/ui/Plant2";
-import { Plant3 } from "@/components/ui/Plant3";
 
 export default function SobreClient() {
   const pageRef = useRef<HTMLDivElement>(null);
@@ -64,13 +61,34 @@ export default function SobreClient() {
       ref={pageRef}
       className="container mx-auto px-4 py-16 sm:px-6 lg:px-8 relative overflow-hidden"
     >
-      <Plant1 className="absolute -bottom-24 -right-24 w-96 h-96 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
-      <Plant3 className="absolute top-1/2 -left-36 w-96 h-96 text-accent/10 opacity-70 -z-10 transform -rotate-45" />
+       <Image
+        src="https://i.imgur.com/cynnrcO.png"
+        alt="decoração de planta"
+        width={384}
+        height={384}
+        className="absolute -bottom-24 -right-24 w-96 h-96 opacity-20 -z-10 transform scale-x-[-1]"
+        aria-hidden="true"
+      />
+      <Image
+        src="https://i.imgur.com/Zd4DB66.png"
+        alt="decoração de planta"
+        width={384}
+        height={384}
+        className="absolute top-1/2 -left-36 w-96 h-96 opacity-10 -z-10 transform -rotate-45"
+        aria-hidden="true"
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
         
         <div className="md:col-span-5 lg:col-span-5 relative" data-anime>
-          <Plant2 className="absolute -top-16 -left-16 w-64 h-64 text-primary/30 opacity-70 -z-20 transform -rotate-45" />
+          <Image
+            src="https://i.imgur.com/ECaF4tf.png"
+            alt="decoração de planta"
+            width={256}
+            height={256}
+            className="absolute -top-16 -left-16 w-64 h-64 opacity-30 -z-20 transform -rotate-45"
+            aria-hidden="true"
+          />
           <div className="transition-transform duration-300 hover:scale-105">
             <Card className="overflow-hidden shadow-xl rounded-2xl bg-card">
               <Image

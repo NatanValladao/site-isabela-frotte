@@ -7,9 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Plant1 } from "@/components/ui/Plant1";
-import { Plant3 } from "@/components/ui/Plant3";
-import { Plant2 } from "@/components/ui/Plant2";
 import type { Post } from "@/lib/types";
 import { urlFor } from "@/lib/sanity";
 
@@ -66,9 +63,30 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
         ref={postsRef}
         className="py-16 md:py-24 relative overflow-hidden"
       >
-        <Plant1 className="absolute -top-24 -left-24 w-96 h-96 text-primary/50 opacity-20 -z-10" />
-        <Plant3 className="absolute -bottom-24 -right-24 w-80 h-80 text-secondary/70 opacity-30 -z-10 transform scale-x-[-1]" />
-        <Plant2 className="absolute top-1/2 -right-48 w-96 h-96 text-primary/10 opacity-50 -z-10" />
+        <Image
+          src="https://i.imgur.com/ECaF4tf.png"
+          alt="decoração de planta"
+          width={384}
+          height={384}
+          className="absolute -top-24 -left-24 w-96 h-96 opacity-15 -z-10"
+          aria-hidden="true"
+        />
+        <Image
+          src="https://i.imgur.com/Zd4DB66.png"
+          alt="decoração de planta"
+          width={320}
+          height={320}
+          className="absolute -bottom-24 -right-24 w-80 h-80 opacity-20 -z-10 transform scale-x-[-1]"
+          aria-hidden="true"
+        />
+        <Image
+          src="https://i.imgur.com/cynnrcO.png"
+          alt="decoração de planta"
+          width={384}
+          height={384}
+          className="absolute top-1/2 -right-48 w-96 h-96 opacity-10 -z-10"
+          aria-hidden="true"
+        />
 
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
