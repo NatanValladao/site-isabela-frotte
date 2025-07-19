@@ -31,13 +31,9 @@ const Footer = () => {
               Psicóloga (CRP 05/77920). Um espaço de acolhimento e transformação para sua saúde mental.
             </p>
             <div className="mt-6 flex gap-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/psi.isabelafrotte" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram />
                 <span className="sr-only">Instagram</span>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin />
-                <span className="sr-only">LinkedIn</span>
               </a>
             </div>
           </div>

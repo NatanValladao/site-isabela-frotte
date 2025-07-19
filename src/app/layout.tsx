@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Isabela Frotté Mello - Psicóloga (CRP 05/77920)',
     description: 'Encontre apoio para sua jornada de autoconhecimento, bem-estar, ansiedade e depressão.',
-    creator: '@isabelafrottepsico', // placeholder
+    creator: '@psi.isabelafrotte',
   },
 };
 
@@ -57,8 +57,7 @@ export default function RootLayout({
       closes: '19:00',
     },
     sameAs: [
-      'https://www.instagram.com/isabelafrottepsico', // placeholder
-      'https://www.linkedin.com/in/isabelafrottemello', // placeholder
+      'https://www.instagram.com/psi.isabelafrotte',
     ],
   };
   
