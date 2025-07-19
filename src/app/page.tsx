@@ -81,7 +81,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="relative hidden lg:block" data-anime>
+              <div className="relative mt-12 lg:mt-0" data-anime>
                 <div className="absolute bg-secondary/50 -bottom-10 -left-10 w-full h-full rounded-2xl" style={{transform: 'rotate(-6deg)'}}/>
                  <div className="interactive-card">
                    <Image
