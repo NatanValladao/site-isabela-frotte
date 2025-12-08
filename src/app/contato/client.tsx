@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import anime from 'animejs';
+import { motion } from "framer-motion";
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -12,8 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { WhatsappIcon } from '@/components/ui/WhatsappIcon';
 import { toast } from '@/hooks/use-toast';
 import Image from 'next/image';
-
-const phoneNumber = "5522981706932";
+import { siteConfig } from "@/config/site";
 
 const formSchema = z.object({
   nome: z.string().min(2, { message: "Por favor, insira seu nome." }),
@@ -21,8 +19,6 @@ const formSchema = z.object({
 });
 
 export default function ContatoClient() {
-  const pageRef = useRef<HTMLDivElement>(null);
-  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,7 +29,7 @@ export default function ContatoClient() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     const template = `*${values.nome.trim()}*: ${values.mensagem.trim()}`;
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(template)}`;
+    const whatsappUrl = `https://wa.me/${siteConfig.contact.phone}?text=${encodeURIComponent(template)}`;
     
     try {
       window.open(whatsappUrl, '_blank');
@@ -47,70 +43,50 @@ export default function ContatoClient() {
     }
   }
 
-  useEffect(() => {
-    const element = pageRef.current;
-    if (!element) return;
-    const elementsToAnimate = Array.from(element.querySelectorAll("[data-anime]"));
-    
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            anime({
-              targets: elementsToAnimate,
-              translateY: [20, 0],
-              opacity: [0, 1],
-              delay: anime.stagger(150),
-              duration: 800,
-              easing: 'easeOutExpo',
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div ref={pageRef} className="overflow-hidden">
-      <section 
-        className="py-16 md:py-24 bg-card/50"
-      >
-        <div className="container mx-auto px-4 text-center">
-          <h1 data-anime className="text-4xl md:text-5xl font-bold tracking-tight text-accent">Entre em Contato</h1>
-          <p data-anime className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+    <div className="overflow-hidden">
+      <section className="py-16 md:py-24 bg-card/50">
+        <motion.div 
+          className="container mx-auto px-4 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-accent font-headline">Entre em Contato</h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             A forma mais rápida de falar comigo é pelo WhatsApp. Envie uma mensagem ou, se preferir, utilize o formulário abaixo.
           </p>
-        </div>
+        </motion.div>
       </section>
 
-      <section 
-        className="py-16 md:py-24 relative"
-      >
+      <section className="py-16 md:py-24 relative">
         <div className="container mx-auto px-4 relative">
-          <Image
-            src="https://i.imgur.com/cynnrcO.png"
-            alt="decoração de planta"
-            width={320}
-            height={320}
-            className="absolute -bottom-24 -right-24 w-80 h-80 opacity-20 -z-10 transform scale-x-[-1]"
-            aria-hidden="true"
-          />
-          <Image
-            src="https://i.imgur.com/ECaF4tf.png"
-            alt="decoração de planta"
-            width={288}
-            height={288}
-            className="absolute -top-24 -left-24 w-72 h-72 opacity-20 -z-10"
-            aria-hidden="true"
-          />
+          <div className="absolute inset-0 -z-10 pointer-events-none">
+             <Image
+              src="https://i.imgur.com/cynnrcO.png"
+              alt=""
+              width={320}
+              height={320}
+              className="absolute -bottom-24 -right-24 w-80 h-80 opacity-20 transform scale-x-[-1]"
+            />
+            <Image
+              src="https://i.imgur.com/ECaF4tf.png"
+              alt=""
+              width={288}
+              height={288}
+              className="absolute -top-24 -left-24 w-72 h-72 opacity-20"
+            />
+          </div>
 
-          <div className="max-w-2xl mx-auto bg-card p-8 rounded-2xl shadow-lg border" data-anime>
-            <h2 className="text-3xl font-bold mb-2 text-center text-accent">Formulário para WhatsApp</h2>
+          <motion.div 
+            className="max-w-2xl mx-auto bg-card p-8 rounded-2xl shadow-lg border"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h2 className="text-3xl font-bold mb-2 text-center text-accent font-headline">Formulário para WhatsApp</h2>
             <p className="text-muted-foreground text-center mb-6">Sua mensagem será enviada diretamente para o meu WhatsApp.</p>
+            
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -151,7 +127,7 @@ export default function ContatoClient() {
                 </div>
               </form>
             </Form>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
