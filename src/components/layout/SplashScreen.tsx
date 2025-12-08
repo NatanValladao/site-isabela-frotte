@@ -1,92 +1,62 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import anime from 'animejs';
-import { cn } from '@/lib/utils';
-import { BrainCircuit } from 'lucide-react';
+import { motion, AnimatePresence } from "framer-motion";
+import { BrainCircuit } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function SplashScreen({ onAnimationComplete }: { onAnimationComplete: () => void }) {
-  const splashRef = useRef<HTMLDivElement>(null);
-  const circleRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const logoRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLHeadingElement>(null);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const tl = anime.timeline({
-      easing: 'easeOutExpo',
-      complete: () => {
-        setTimeout(onAnimationComplete, 200);
-      }
-    });
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+      setTimeout(onAnimationComplete, 500); // Tempo para a animação de saída terminar
+    }, 2000); // Duração total da splash
 
-    tl.add({
-      targets: logoRef.current,
-      scale: [0, 1],
-      rotate: [-180, 0],
-      duration: 1000,
-    })
-    .add({
-      targets: textRef.current,
-      translateY: [20, 0],
-      opacity: [0, 1],
-      duration: 800,
-    }, '-=600')
-    .add({
-      targets: contentRef.current,
-      opacity: 0,
-      scale: 0.8,
-      duration: 500,
-      delay: 500,
-    })
-    .add({
-      targets: circleRef.current,
-      scale: [0, 40],
-      duration: 1000,
-    }, '-=500')
-    .add({
-        targets: splashRef.current,
-        opacity: 0,
-        begin: () => {
-          if (splashRef.current) {
-             splashRef.current.style.pointerEvents = 'none';
-          }
-        }
-    }, '-=600');
-    
+    return () => clearTimeout(timer);
   }, [onAnimationComplete]);
 
   return (
-    <div
-      ref={splashRef}
-      aria-hidden="true"
-      className={cn('fixed inset-0 z-50 flex items-center justify-center bg-background')}
-    >
-      <div
-        ref={circleRef}
-        className='absolute rounded-full bg-accent'
-        style={{ width: '100px', height: '100px', transform: 'scale(0)' }}
-      />
-      
-      <div
-        ref={contentRef}
-        className="relative flex flex-col items-center"
-      >
-        <div
-          ref={logoRef}
-          className="p-4 bg-card rounded-full mb-4"
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background"
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <BrainCircuit className="w-12 h-12 text-primary" />
-        </div>
-        
-        <h1
-          ref={textRef}
-          className="font-headline text-3xl text-primary z-10"
-          style={{ opacity: 0 }}
-        >
-          Isabela Frotté Mello
-        </h1>
-      </div>
-    </div>
+          {/* Círculo de Fundo Expandindo */}
+          <motion.div
+            className="absolute rounded-full bg-accent/10"
+            initial={{ width: 0, height: 0 }}
+            animate={{ width: "150vmax", height: "150vmax" }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+
+          <div className="relative flex flex-col items-center">
+            {/* Logo Girando e Entrando */}
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 1, type: "spring", bounce: 0.5 }}
+              className="p-4 bg-card rounded-full mb-4 shadow-lg border border-border/50"
+            >
+              <BrainCircuit className="w-12 h-12 text-primary" />
+            </motion.div>
+
+            {/* Texto Revelando */}
+            <motion.div className="overflow-hidden">
+              <motion.h1
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                className="font-headline text-3xl text-primary font-bold"
+              >
+                Isabela Frotté Mello
+              </motion.h1>
+            </motion.div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
