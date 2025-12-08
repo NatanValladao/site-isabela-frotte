@@ -84,7 +84,9 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 border-t border-border pt-8 text-center text-xs text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Desenvolvido por Natan Motta Valladão. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>
