@@ -98,7 +98,7 @@ export default function TerapiaDeCasalPage() {
             <div className="mx-auto w-full max-w-sm space-y-2 interactive-button">
               <Button asChild size="lg" className="font-semibold w-full bg-[#25D366] hover:bg-[#128C7E] text-white">
                 <Link 
-                  href={`https://wa.me/5522997604703?text=${encodeURIComponent("Olá, gostaria de saber mais sobre a terapia de casal.")}`} 
+                  href={`https://wa.me/5522981706932?text=${encodeURIComponent("Oi! Conheci seu trabalho através do seu site e gostaria de saber mais.")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

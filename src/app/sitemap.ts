@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { client } from '@/lib/sanity'
  
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://isabelafrotte.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://psicologaisabelafrotte.com.br';
   
   // Static routes
   const staticRoutes = [

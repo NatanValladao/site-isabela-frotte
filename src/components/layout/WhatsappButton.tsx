@@ -7,7 +7,7 @@ import { WhatsappIcon } from '@/components/ui/WhatsappIcon';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 
-const phoneNumber = "5522997604703";
+const phoneNumber = "5522981706932";
 
 const getMessageForPath = (path: string) => {
   if (path.startsWith('/servicos/terapia-individual')) {
@@ -19,7 +19,7 @@ const getMessageForPath = (path: string) => {
   if (path.startsWith('/servicos/avaliacao-neuropsicologica')) {
     return "Olá, gostaria de saber mais sobre a avaliação neuropsicológica.";
   }
-  return "Olá, gostaria de agendar uma conversa.";
+  return "Oi! Conheci seu trabalho através do seu site e gostaria de saber mais.";
 };
 
 export default function WhatsappButton() {

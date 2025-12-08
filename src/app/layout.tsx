@@ -3,33 +3,53 @@ import './globals.css';
 import ClientLayoutWrapper from '@/components/layout/ClientLayoutWrapper';
 import { Toaster } from '@/components/ui/toaster';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://isabelafrotte.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://psicologaisabelafrotte.com.br';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Isabela Frotté Mello - Psicóloga (CRP 05/77920)',
+    default: 'Isabela Frotté Mello - Psicóloga | Psicoterapeuta | Terapia de Casais',
     template: '%s | Isabela Frotté Mello - Psicóloga',
   },
   description: 'Psicóloga Isabela Frotté Mello (CRP 05/77920). Atendimento online para adolescentes, adultos e casais. Especialista em TCC, Neuropsicologia, Transtorno Borderline e Bipolar.',
   keywords: 'psicóloga, psicologia, terapia online, TCC, neuropsicologia, transtorno de personalidade borderline, transtorno afetivo bipolar, isabela frotté mello',
-  authors: [{ name: 'Isabela Frotté Mello' }],
-  creator: 'Isabela Frotté Mello',
+  authors: [{ name: 'Natan Motta Valladão' }],
+  creator: 'Natan Motta Valladão',
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
     url: siteUrl,
-    title: 'Isabela Frotté Mello - Psicóloga (CRP 05/77920)',
-    description: 'Atendimento online para adolescentes, adultos e casais. Terapia Cognitivo-Comportamental e Neuropsicologia.',
+    title: 'Isabela Frotté Mello - Psicóloga | Psicoterapeuta | Terapia de Casais',
+    description: 'Encontre um espaço de acolhimento para sua jornada de autoconhecimento, bem-estar e saúde mental.',
     siteName: 'Isabela Frotté Mello | Psicóloga',
+    images: [
+      {
+        url: `${siteUrl}/og-image.png`, 
+        width: 1200,
+        height: 630,
+        alt: 'Consultório Digital da Psicóloga Isabela Frotté Mello',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Isabela Frotté Mello - Psicóloga (CRP 05/77920)',
+    title: 'Isabela Frotté Mello - Psicóloga | Psicoterapeuta | Terapia de Casais',
     description: 'Encontre apoio para sua jornada de autoconhecimento, bem-estar, ansiedade e depressão.',
     creator: '@psi.isabelafrotte',
+    images: [`${siteUrl}/og-image.png`],
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -40,7 +60,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Psychologist',
     name: 'Isabela Frotté Mello',
-    image: `${siteUrl}/og-image.png`, // placeholder
+    image: `${siteUrl}/og-image.png`, 
     '@id': siteUrl,
     url: siteUrl,
     telephone: '+5522997604703',

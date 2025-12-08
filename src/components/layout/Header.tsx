@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 import { WhatsappIcon } from '../ui/WhatsappIcon';
 
 const Header = () => {
-  const phoneNumber = "5522997604703";
-  const message = "Olá, gostaria de agendar uma conversa.";
+  const phoneNumber = "5522981706932";
+  const message = "Oi! Conheci seu trabalho através do seu site e gostaria de saber mais.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (

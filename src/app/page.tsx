@@ -103,7 +103,7 @@ export default function Home() {
                 <div className="absolute bg-secondary/50 -bottom-10 -left-10 w-full h-full rounded-2xl" style={{transform: 'rotate(-6deg)'}}/>
                  <div className="interactive-card">
                    <Image
-                      src="https://imgur.com/IV9fEjN.png"
+                      src="https://imgur.com/JmSuTKr.png"
                       alt="Psicóloga Isabela Frotté Mello"
                       width={600}
                       height={750}
